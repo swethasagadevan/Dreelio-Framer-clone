@@ -1,16 +1,63 @@
-# React + Vite
+# 🚀 Dreelio Website
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern, responsive **Dreelio website clone** built using **React**, **Tailwind CSS**, and **Framer Motion**.  
+This project focuses on smooth UI, clean design, and engaging animations.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## 🌐 Live Demo
+👉 [View Live Project](#)  
+*(Add your deployed link here — Vercel / Netlify)*
 
-## React Compiler
+---
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## 📌 Features
 
-## Expanding the ESLint configuration
+- ⚡ Fully responsive design
+- 🎨 Styled with Tailwind CSS
+- ✨ Smooth animations using Framer Motion
+- 🧩 Reusable React components
+- 📱 Mobile-first approach
+- 🔥 Clean and modern UI
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+## 🛠️ Tech Stack
+
+- **React** – Frontend library
+- **Tailwind CSS** – Utility-first styling
+- **Framer Motion** – Animations
+- **JavaScript (ES6+)**
+
+---
+
+## 📂 Project Structure
+```
+src/
+│── components/ # Reusable UI components
+│── pages/ # Page sections
+│── assets/ # Images & icons
+│── App.js
+│── main.jsx
+```
+
+
+## ⚙️ Installation & Setup
+
+1️⃣ Clone the Repository
+```
+git clone https://github.com/swethasagadevan/Dreelio-Framer-clone.git
+cd bulkmailer-MERN
+```
+2️⃣ Frontend Setup
+```cd frontend
+npm install
+npm run dev
+```
+
+## 🎯 Learning Highlights
+Building responsive layouts with Tailwind
+Creating smooth animations with Framer Motion
+Component-based architecture in React
+Improving UI/UX design skills
+
