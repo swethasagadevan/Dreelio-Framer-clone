@@ -1,35 +1,49 @@
-import React from 'react'
-import {motion} from 'framer-motion'
+import React, { useEffect, useState } from 'react'
+import {easeIn, motion} from 'framer-motion'
 import { FaBars,FaLeaf } from 'react-icons/fa'
 
 const Navbar = () => {
-
-  const navLinks =[{name:'Features',link:"#"},
+    const [scrolled,setScrolled] = useState(false);
+    const navLinks =[{name:'Features',link:"#"},
     {name:'Benefits',link:"#"},
     {name:'Pricing',link:"#"},
     {name:'Blog',link:"#"},
     {name:'Contact Us',link:"#"},
   ];
 
+  useEffect(()=>{
+    const handleScroll = ()=>{
+        setScrolled(window.scrollY>50)
+    };
+    console.log(handleScroll())
+    window.addEventListener("scroll",handleScroll);
+    return ()=>window.removeEventListener("scroll",handleScroll)
+  },[])
+
   return (
-    <div className='flex justify-center w-full fixed z-50 mt-4'>
-      {/* <nav className='flex justify-evenly items-center gap-40'> */}
-      <motion.nav
-      initial={{y:1}}
-      animate={{y:2}}
-      transition={{duration:0.5}}
-      className={'flex gap-40 items-center border p-4 rounded-full bg-white bg-opacity-50 backdrop-blur-md'}       
->
-    <h2 className='font-bold text-xl flex items-center gap-1'><FaLeaf/> Dreelio</h2>
-  <div className='flex gap-8 text-x'>
-  {navLinks.map((data,index)=>(
-    <a key={index} href={data.link}>{data.name}</a>
-  ))}
-  </div>
-  <button className='bg-black text-white font-bold border rounded-full p-2'>Try Dreelio free</button>
-      </motion.nav>
-{/* </nav> */}
+    <motion.nav
+        initial={false}
+        animate={{
+            width:scrolled?"60%":"100%",
+            borderRadius:scrolled?"50px":"0px",
+        }}
+        transition={{duration:0.5,ease:"easeInOut"}}
+        className={`fixed top-1 left-0 right-0 z-50 
+        ${scrolled ? "mx-auto shadow-lg backdrop-blur bg-white/70" : "bg-transparent"}
+      `}
+    >
+    <div className='flex items-center justify-evenly gap-10 px-2 py-4'>
+      <h1 className="text-xl font-bold flex gap-2 items-center"><FaLeaf/> Dreelio</h1>
+      <div className="flex gap-6 text-l">
+        {navLinks.map((data,index)=>(
+            <a href={data.link} key={index}>{data.name}</a>
+        ))}
+      </div>
+      <button className="bg-black font-bold text-white px-4 py-2 rounded-full">
+          Try Dreelio free
+        </button>
     </div>
+    </motion.nav>
   )
 }
 

@@ -34,15 +34,15 @@ const Footer = () => {
         <div className="flex gap-20">
           <div className="flex flex-col gap-5">
             <h4 className="font-bold">PAGES</h4>
-          {footer_pages_link.map((data) => (
-            <a href={data.link} className="text-gray-600">{data.tag}</a>
+          {footer_pages_link.map((data,index) => (
+            <a href={data.link} key={index} className="text-gray-600">{data.tag}</a>
           ))}
           </div>
 
           <div className="flex flex-col gap-5">
             <h4 className="font-bold">INFORMATION</h4>
-          {footer_information_link.map((data) => (
-            <a href={data.link} className="text-gray-600">{data.tag}</a>
+          {footer_information_link.map((data,index) => (
+            <a href={data.link} key={index} className="text-gray-600">{data.tag}</a>
           ))}
           </div>
         </div>
