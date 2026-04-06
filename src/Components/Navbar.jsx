@@ -4,7 +4,7 @@ import { FaBars,FaLeaf } from 'react-icons/fa'
 
 const Navbar = () => {
     const [scrolled,setScrolled] = useState(false);
-    const navLinks =[{name:'Features',link:"#"},
+    const navLinks =[{name:'Features',link:"#features"},
     {name:'Benefits',link:"#"},
     {name:'Pricing',link:"#"},
     {name:'Blog',link:"#"},
@@ -13,7 +13,7 @@ const Navbar = () => {
 
   useEffect(()=>{
     const handleScroll = ()=>{
-        if(window.innerWidth<768){
+        if(window.innerWidth<1024){
           setScrolled(true)
         }
         else{
@@ -43,18 +43,21 @@ const Navbar = () => {
         ${scrolled ? " shadow-lg backdrop-blur bg-white/70" : "bg-transparent"}
       `}
     >
-    <div className='flex items-center justify-between gap-10 px-2 py-4'>
-      <h1 className="text-xl font-bold flex gap-2 items-center"><FaLeaf/> Dreelio</h1>
+    <div className='flex items-center justify-between xl:justify-around px-2 py-4'>
+      <h1 
+      className="sm:text-lg lg:text-xl font-bold flex gap-2 items-center"
       
-      <div className="hidden lg:flex gap-6 text-l">
+      ><FaLeaf/> Dreelio</h1>
+      
+      <div className="hidden xl:flex items-center gap-6 sm:text-sm lg:text-lg">
         {navLinks.map((data,index)=>(
             <a href={data.link} key={index}>{data.name}</a>
         ))}
       </div>
-      <button className="bg-black font-bold text-white px-4 py-2 rounded-full hidden lg:inline-block ">
+      <button className="bg-black font-bold text-white px-4 py-2 rounded-full hidden xl:inline-block sm:text-sm lg:text-lg">
           Try Dreelio free
       </button>
-      <div className='lg:hidden px-2'>
+      <div className='xl:hidden px-2 m'>
           <FaBars/>
         </div>
         

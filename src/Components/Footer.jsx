@@ -16,7 +16,7 @@ const Footer = () => {
   ];
   return (
     <div className="pb-10 text-md">
-    <div className="border rounded-3xl bg-white bg-opacity-30  mx-[15%] mt-[15%] p-10  ">
+    <div className="border rounded-3xl bg-white bg-opacity-30 mx-[5%] xl:mx-[15%] mt-[15%] p-10  ">
       <div className="flex gap-10 justify-between ">
         <div>
           <h2 className="font-bold text-xl flex items-center gap-2 flex-wrap">
