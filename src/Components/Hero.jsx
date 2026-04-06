@@ -23,12 +23,11 @@ const Hero = () => {
   const y = useTransform(scrollYProgress, [0, 1], [100, 0]); //move up
 
   return (
-    <>
     <motion.div 
     initial="hidden"
     animate="visible"
     transition={{staggerChildren:0.005}}
-    className=" bg-gradient-to-b from-blue-200 to-orange-100 px-[20%] pt-[10%] text-center">
+    className=" bg-gradient-to-b from-blue-200 to-orange-100 px-[10%] xl:px-[20%] pt-[10%] text-center">
         {textArray[0].split("").map((char,i)=>(
           <motion.span
             key={i}
@@ -84,7 +83,6 @@ const Hero = () => {
         ></motion.img>
       </div>
       </motion.div>
-   </>
   );
 };
 
