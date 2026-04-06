@@ -10,7 +10,7 @@ function App() {
       <Navbar/>
       <Hero/>
       <Scrollerbar/>
-      <section className='bg-gradient-to-b from-orange-100 to to-blue-200'>
+      <section className='bg-gradient-to-b from-orange-100 to to-blue-200 pt-1'>
         <Footer/>
       </section>
       
