@@ -18,7 +18,7 @@ const Hero = () => {
     offset: ["start end", "center center"],
   });
 
-  const rotateX = useTransform(scrollYProgress, [0, 1], ["25deg", "0deg"]); // tilt - [scrollspeed,startvaluetoend]
+  const rotateX = useTransform(scrollYProgress, [0, 1], ["35deg", "0deg"]); // tilt - [scrollspeed,startvaluetoend]
   const scale = useTransform(scrollYProgress, [0, 1], [0.8, 1]); //zoom in
   const y = useTransform(scrollYProgress, [0, 1], [100, 0]); //move up
 
