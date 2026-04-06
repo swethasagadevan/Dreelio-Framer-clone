@@ -1,5 +1,6 @@
 import React, { useRef } from 'react'
 import featuresimgone from '../assets/Freatures_img_one.avif'
+import featuresimgtwo from '../assets/Freatures_img_two.avif'
 import {motion, useScroll, useTransform} from 'framer-motion'
 import {FaChartLine, FaDollarSign, FaFileInvoice, FaList, FaRegClock,FaShapes,FaTasks } from 'react-icons/fa'
 import { FaRegFilePdf } from 'react-icons/fa6'
@@ -28,7 +29,7 @@ const Features = () => {
         ]
     },
     {
-        image:featuresimgone,
+        image:featuresimgtwo,
         title:"FINANCIAL MANAGEMENT",
         heading:"Track income, get paid, stress less",
         subheading:"Create branded invoices,",
