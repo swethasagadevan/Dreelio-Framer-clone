@@ -6,7 +6,7 @@ const Hero = () => {
   //for text typing effect
 
   const textArray = [
-    "Run your freelance business like a pro",
+    "Run your freelance", "business like a pro",
     "All-in-one platform for managing clients, projects, and payments without the chaos. From first contract to final invoice, we’ve got your back."
   ]
 
@@ -26,60 +26,48 @@ const Hero = () => {
     <motion.div 
     initial="hidden"
     animate="visible"
-    transition={{staggerChildren:0.005}}
-    className=" bg-gradient-to-b from-blue-200 to-orange-100 px-[10%] xl:px-[20%] pt-[10%] text-center">
-        {textArray[0].split("").map((char,i)=>(
-          <motion.span
+    transition={{staggerChildren:0.25,delayChildren:0.02}}
+    className=" bg-gradient-to-b from-blue-200 to-orange-100 px-[10%] xl:px-[20%] pt-[20%] xl:pt-[10%] text-center">
+        {textArray.map((line,i)=>(
+          <motion.div
             key={i}
             variants={{
               hidden:{opacity:0},visible:{opacity:1}
             }}
-            className="font-bold sm:text-5xl lg:text-7xl"
+            className={`${i==2?'sm:text-l lg:text-xl px-[10%] text-gray-500 my-5':'font-bold text-4xl md:text-5xl xl:text-7xl'}`}
           >
-            {char}
-          </motion.span>
-        ))}
-        <div className="sm:text-l lg:text-xl px-[10%] text-gray-500 my-5">
-        {textArray[1].split("").map((char,i)=>(
-          <motion.span
-          key={i}
-          variants={{
-            hidden:{opacity:0},visible:{opacity:1}
-          }}
-          >
-            {char}
-          </motion.span>
+            {line}
+          </motion.div>
         ))}
 
-      </div>
   
-      <div className="flex gap-5 justify-center items-center">
+      <div className="grid gap-5 md:flex md:justify-center ">
         <motion.button 
           variants={{
             hidden:{opacity:0},visible:{opacity:1}
           }}
-        className="bg-black text-white border rounded-full p-2 font-bold">
+        className="bg-black text-white border rounded-full py-2 px-4 font-bold">
           Try Dreelio free
         </motion.button>
         <motion.button 
           variants={{
             hidden:{opacity:0},visible:{opacity:1}
           }}
-        className="bg-transparent border-sky-100 rounded-full p-2 font-bold">
+        className="bg-transparent border-sky-100 rounded-full py-2 px-4 font-bold">
           See features
         </motion.button>
       </div>
       
       <div
         ref={ref}
-        className="h-[400px] mt-3 overflow-hidden relative"
+        className="h-[200px] sm:h-[300px] lg:h-[400px] mt-3 overflow-hidden relative"
         style={{ perspective: 1000 }}
       >
         <motion.img
           src={profileimage}
           alt="profile image"
           style={{ rotateX, scale, y }}
-          className="m-auto w-[90%]"
+          className="m-auto w-[100%]"
         ></motion.img>
       </div>
       </motion.div>

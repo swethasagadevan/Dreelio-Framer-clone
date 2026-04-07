@@ -15,9 +15,10 @@ const Footer = () => {
     { tag: "404", link: "#" },
   ];
   return (
+    
     <div className="pb-10 text-md">
-    <div className="border rounded-3xl bg-white bg-opacity-30 mx-[5%] xl:mx-[15%] mt-[15%] p-10  ">
-      <div className="flex gap-10 justify-between ">
+    <div className="border rounded-3xl bg-white bg-opacity-30 mx-[5%] xl:mx-[15%] mt-[5%] p-10  ">
+      <div className="grid md:grid-cols-2 gap-10 justify-between ">
         <div>
           <h2 className="font-bold text-xl flex items-center gap-2 flex-wrap">
             <FaLeaf /> Dreelio
@@ -31,7 +32,7 @@ const Footer = () => {
             <FaXTwitter className="bg-black text-white p-2 text-4xl border rounded-full"/>
           </div>
         </div>
-        <div className="flex gap-20">
+        <div className="grid md:grid-cols-2 gap-20"> 
           <div className="flex flex-col gap-5">
             <h4 className="font-bold">PAGES</h4>
           {footer_pages_link.map((data,index) => (
@@ -48,9 +49,9 @@ const Footer = () => {
         </div>
       </div>
 
-      <div className="flex justify-between border-t-2 border-gray-300 mt-4 pt-4">
-        <p className="text-gray-600">© 2025 Dreelio. Created by Leon Chike</p>
-        <p className="text-gray-600">Built in</p>
+      <div className="text-center xl:flex flex-wrap justify-between border-t-2 border-gray-300 mt-4 pt-4">
+        <p className="text-gray-600">© 2025 Dreelio. Created by <strong>Leon Chike</strong></p>
+        <p className="text-gray-600">Built in <strong>Framer</strong></p>
       </div>
     </div>
     </div>

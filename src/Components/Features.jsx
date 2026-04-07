@@ -49,7 +49,7 @@ const Features = () => {
         <div
         key={index} 
         id="features" 
-        className='flex m-10 gap-10 flex-wrap xl:flex-nowrap xl:mx-[15%]'>
+        className='relative flex m-10 gap-10 flex-wrap xl:flex-nowrap xl:mx-[15%]'>
         <div 
         ref={ref}
         className={`p-[15%] xl:p-[5%] overflow-hidden bg-gradient-to-b from-blue-200 to-orange-50 rounded-2xl ${index==0?"order-2 xl:order-1":"order-2 xl:order-2"} w-full xl:w-1/2`}>
@@ -60,15 +60,15 @@ const Features = () => {
             >
             </motion.img>
         </div>
-        <div className={`relative py-4 w-full xl:w-1/2 ${index==0?"order-1 xl:order-2":"order-1 xl:order-1"}`}>
+        <div className={`relative py-4 my-5 w-full xl:w-1/2 ${index==0?"order-1 xl:order-2":"order-1 xl:order-1"}`}>
             <h4 className='text-md xl:text-lg text-gray-500 font-bold'>{data.title}</h4>
             <h1 className='font-semibold text-4xl xl:text-6xl py-2'>{data.heading}</h1>
             <p className='text-xl pb-4'><strong>{data.subheading}</strong>{data.desc}</p>
             <button className='bg-black text-white font-bold px-6 py-3 rounded-full'>Try Dreelio free</button>
-            <div className=' mt-2 xl:absolute bottom-0'>
-                <div className='flex flex-wrap'>
+            <div className=' mt-2 xl:absolute bottom-0 left-0 right-0'>
+                <div className='grid grid-cols-2 p-2 m-2'>
                     {data.buttons.map((data,index)=>(
-                        <div key={index} className='border border-gray-300 rounded-full flex items-center justify-center gap-2 p-3 m-2 w-[45%]'>
+                        <div key={index} className='border border-gray-300 rounded-full p-3 m-2 flex items-center gap-2'>
                             {data.icon}{data.title}
                         </div>
                     ))}
