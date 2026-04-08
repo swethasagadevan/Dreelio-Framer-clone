@@ -1,6 +1,7 @@
 import React from 'react'
 import youtubeImg from '../assets/youtube_img.avif'
 import twitterImg from '../assets/twitter_img.avif'
+import { motion } from 'framer-motion'
 
 const Community = () => {
     const tabs =[{
@@ -29,7 +30,25 @@ const Community = () => {
                 {/* <img className='text-5xl py-5' src={data.icon}/> */}
                 <h2 className='text-2xl font-bold py-3'>{data.title}</h2>
                 <p className='pb-4 text-gray-600'>{data.text}</p>
-                <button className='font-bold border-2 rounded-full w-full md:w-fit px-4 py-2'>{data.btntxt}</button>
+                
+                <motion.button
+                            initial="rest"
+                            whileHover="hover"
+                            className=' px-6 py-4 font-bold border-2 rounded-full w-full md:w-fit'
+                            >
+                              <div className='relative overflow-hidden leading-none'>
+                                <motion.span 
+                                variants={{rest:{y:0},hover:{y:"-100%"}}}
+                                transition={{duration:0.1,ease:"easeOut"}}
+                                className='block'
+                                >{data.btntxt}</motion.span>
+                                <motion.span
+                                variants={{rest:{y:"100%"},hover:{y:0}}}
+                                transition={{duration:0.1,ease:"easeOut"}}
+                                className='absolute inset-0 block'
+                                >{data.btntxt}</motion.span>
+                              </div>
+                            </motion.button>
                 <span className='font-bold text-gray-500 absolute top-10 right-6'>{data.users}</span>
             </div>
         ))}

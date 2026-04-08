@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import blogimg1 from '../assets/blog_img_1.svg'
 import { FaCheck } from 'react-icons/fa6'
+import { motion } from 'framer-motion'
 
 const Pricing = () => {
   const [billing,setBilling]=useState("monthly")
@@ -64,10 +65,24 @@ const Pricing = () => {
           
         </ul>
         <div className='w-full'>
-          <button 
-          className={`w-full ${index==1?'bg-black text-white':'bg-[#F4F1EE]'} font-medium rounded-full mt-5 px-14 py-3`}>
-            {data.buttonName}
-            </button>
+            <motion.button
+                initial="rest"
+                whileHover="hover"
+                className={`w-full ${index==1?'bg-black text-white':'bg-[#F4F1EE]'} font-medium rounded-full mt-5 px-14 py-3`}
+                >
+                  <div className='relative overflow-hidden leading-none'>
+                    <motion.span 
+                    variants={{rest:{y:0},hover:{y:"-100%"}}}
+                    transition={{duration:0.1,ease:"easeOut"}}
+                    className='block'
+                    >{data.buttonName}</motion.span>
+                    <motion.span
+                    variants={{rest:{y:"100%"},hover:{y:0}}}
+                    transition={{duration:0.1,ease:"easeOut"}}
+                    className='absolute inset-0 block'
+                    >{data.buttonName}</motion.span>
+                  </div>
+                </motion.button>
         </div>
         
         </div>

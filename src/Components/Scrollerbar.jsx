@@ -55,8 +55,42 @@ const Scrollerbar = () => {
         </div>
 
         <div className='bg-white/30 backdrop-blur absolute left-1/3 xl:left-1/2 -translate-x-1/3 xl:-translate-x-1/2 bottom-10 rounded-full grid grid-cols-2 gap-4 p-2'>
-          <button className=' rounded-full bg-black text-white py-3 px-6 font-bold'>Mobile App</button>
-          <button className=' rounded-full bg-white/5 backdrop-blur text-white py-3 px-6 font-bold'>Web App</button>
+        <motion.button
+                        initial="rest"
+                        whileHover="hover"
+                        className='bg-black text-white px-6 py-4 rounded-full font-bold'
+                        >
+                          <div className='relative overflow-hidden leading-none'>
+                            <motion.span 
+                            variants={{rest:{y:0},hover:{y:"-100%"}}}
+                            transition={{duration:0.1,ease:"easeOut"}}
+                            className='block'
+                            >Mobile App</motion.span>
+                            <motion.span
+                            variants={{rest:{y:"100%"},hover:{y:0}}}
+                            transition={{duration:0.1,ease:"easeOut"}}
+                            className='absolute inset-0 block'
+                            >Moblie App</motion.span>
+                          </div>
+                        </motion.button>
+                        <motion.button
+                                        initial="rest"
+                                        whileHover="hover"
+                                        className='bg-white/40 text-white px-6 py-4 rounded-full font-bold'
+                                        >
+                                          <div className='relative overflow-hidden leading-none'>
+                                            <motion.span 
+                                            variants={{rest:{y:0},hover:{y:"-100%"}}}
+                                            transition={{duration:0.1,ease:"easeOut"}}
+                                            className='block'
+                                            >Web App</motion.span>
+                                            <motion.span
+                                            variants={{rest:{y:"100%"},hover:{y:0}}}
+                                            transition={{duration:0.1,ease:"easeOut"}}
+                                            className='absolute inset-0 block'
+                                            >Web App</motion.span>
+                                          </div>
+                                        </motion.button>
         </div>
 
     </div>

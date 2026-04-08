@@ -42,20 +42,45 @@ const Hero = () => {
 
   
       <div className="grid gap-5 md:flex md:justify-center ">
-        <motion.button 
-          variants={{
-            hidden:{opacity:0},visible:{opacity:1}
-          }}
-        className="bg-black text-white border rounded-full py-2 px-4 font-bold">
-          Try Dreelio free
-        </motion.button>
-        <motion.button 
-          variants={{
-            hidden:{opacity:0},visible:{opacity:1}
-          }}
-        className="bg-transparent border-sky-100 rounded-full py-2 px-4 font-bold">
-          See features
-        </motion.button>
+
+        <motion.button
+                initial="rest"
+                whileHover="hover"
+                className='bg-black text-white border px-6 py-4 rounded-full font-bold'
+                >
+                  <div className='relative overflow-hidden leading-none'>
+                    <motion.span 
+                    variants={{rest:{y:0},hover:{y:"-100%"}}}
+                    transition={{duration:0.1,ease:"easeOut"}}
+                    className='block'
+                    >Try Dreelio free</motion.span>
+                    <motion.span
+                    variants={{rest:{y:"100%"},hover:{y:0}}}
+                    transition={{duration:0.1,ease:"easeOut"}}
+                    className='absolute inset-0 block'
+                    >Try Dreelio free</motion.span>
+                  </div>
+                </motion.button>
+
+        <motion.button
+                initial="rest"
+                whileHover="hover"
+                className='bg-white/20 border-sky-50 px-6 py-4 rounded-full font-bold'
+                >
+                  <div className='relative overflow-hidden leading-none'>
+                    <motion.span 
+                    variants={{rest:{y:0},hover:{y:"-100%"}}}
+                    transition={{duration:0.1,ease:"easeOut"}}
+                    className='block'
+                    >See features</motion.span>
+                    <motion.span
+                    variants={{rest:{y:"100%"},hover:{y:0}}}
+                    transition={{duration:0.1,ease:"easeOut"}}
+                    className='absolute inset-0 block'
+                    >See features</motion.span>
+                  </div>
+                </motion.button>
+
       </div>
       
       <div

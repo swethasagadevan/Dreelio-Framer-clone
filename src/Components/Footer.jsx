@@ -1,5 +1,6 @@
 import React from "react";
 import { FaXTwitter,FaLinkedin,FaLeaf } from "react-icons/fa6";
+import { motion } from "framer-motion";
 
 const Footer = () => {
   const footer_pages_link = [
@@ -20,7 +21,25 @@ const Footer = () => {
      <div className='text-center mt-32'>
         <h2 className="text-3xl xl:text-5xl text-center font-semibold px-[10%] my-5">Ready to get started</h2>
         <h5 className="text-lg text-gray-500 mb-5">Download Dreelio for free. No credit card required.</h5>
-        <button className='bg-black text-white font-bold py-4 px-8 rounded-full w-full md:w-fit'>Try Freelio free</button>
+        
+        <motion.button
+                            initial="rest"
+                            whileHover="hover"
+                            className='bg-black text-white px-6 py-4 rounded-full font-bold w-full md:w-fit'
+                            >
+                              <div className='relative overflow-hidden leading-none'>
+                                <motion.span 
+                                variants={{rest:{y:0},hover:{y:"-100%"}}}
+                                transition={{duration:0.1,ease:"easeOut"}}
+                                className='block'
+                                >Try Dreelio free</motion.span>
+                                <motion.span
+                                variants={{rest:{y:"100%"},hover:{y:0}}}
+                                transition={{duration:0.1,ease:"easeOut"}}
+                                className='absolute inset-0 block'
+                                >Try Dreelio free</motion.span>
+                              </div>
+                            </motion.button>
     </div> 
     <div className="border rounded-3xl bg-white bg-opacity-30 mx-[5%] xl:mx-[15%] mt-[5%] p-10  ">
       <div className="grid md:grid-cols-2 gap-10 justify-between ">

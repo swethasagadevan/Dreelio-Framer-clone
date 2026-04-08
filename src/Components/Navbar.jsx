@@ -3,6 +3,7 @@ import { motion} from 'framer-motion'
 import { FaBars,FaLeaf } from 'react-icons/fa'
 import {FaX } from 'react-icons/fa6'
 import { HashLink } from 'react-router-hash-link'
+import ButtonFlip from './ButtonFlip'
 
 const Navbar = () => {
 
@@ -60,16 +61,32 @@ const Navbar = () => {
       <h1 
       className="sm:text-lg lg:text-xl font-bold flex gap-2 items-center"
       
-      ><FaLeaf/> Dreelio</h1>
+      ><FaLeaf/> <HashLink smooth to="/" >Dreelio</HashLink> </h1>
       
-      <div className="hidden xl:flex items-center gap-6 sm:text-sm lg:text-lg">
+      <div className="hidden xl:flex items-center gap-2 sm:text-sm lg:text-lg">
         {navLinks.map((data,index)=>(
-            <HashLink to={data.link} key={index}>{data.name}</HashLink>
+            <HashLink smooth to={data.link} key={index} className='hover:bg-white/30 rounded-full py-1 px-4' >{data.name}</HashLink>
         ))}
       </div>
-      <button className="bg-black font-bold text-white px-4 py-2 rounded-full hidden xl:inline-block sm:text-sm lg:text-lg">
-          Try Dreelio free
-      </button>
+        <motion.button
+        initial="rest"
+        whileHover="hover"
+        className='bg-black text-white px-6 py-4 rounded-full font-bold hidden xl:inline-block sm:text-sm lg:text-lg'
+        >
+          <div className='relative overflow-hidden leading-none'>
+            <motion.span 
+            variants={{rest:{y:0},hover:{y:"-100%"}}}
+            transition={{duration:0.1,ease:"easeOut"}}
+            className='block'
+            >Try Dreelio free</motion.span>
+            <motion.span
+            variants={{rest:{y:"100%"},hover:{y:0}}}
+            transition={{duration:0.1,ease:"easeOut"}}
+            className='absolute inset-0 block'
+            >Try Dreelio free</motion.span>
+          </div>
+        </motion.button>
+
       <div className='xl:hidden px-2' >
          {menuBar?<FaX onClick={()=>handleMenuBar()}/>: <FaBars onClick={()=>handleMenuBar()}/>}
         </div>
@@ -79,7 +96,25 @@ const Navbar = () => {
       {navLinks.map((data,i)=>(
         <HashLink smooth to={data.link} key={i} onClick={()=>handleMenuBar()}>{data.name}</HashLink>
       ))}
-      <button className='bg-black text-white py-2 rounded-full '>Try Dreelio free</button>
+      {/* <button className='bg-black text-white py-2 rounded-full '>Try Dreelio free</button> */}
+      <motion.button
+        initial="rest"
+        whileHover="hover"
+        className='bg-black text-white px-6 py-4 rounded-full'
+        >
+          <div className='relative overflow-hidden leading-none'>
+            <motion.span 
+            variants={{rest:{y:0},hover:{y:"-100%"}}}
+            transition={{duration:0.1,ease:"easeOut"}}
+            className='block'
+            >Try Dreelio free</motion.span>
+            <motion.span
+            variants={{rest:{y:"100%"},hover:{y:0}}}
+            transition={{duration:0.1,ease:"easeOut"}}
+            className='absolute inset-0 block'
+            >Try Dreelio free</motion.span>
+          </div>
+        </motion.button>
       
     </div>}
     

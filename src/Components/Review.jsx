@@ -50,7 +50,7 @@ const Review = () => {
             <motion.div
               animate={{ x: ["0%", "-100%"] }}
               transition={{
-                duration: "150",
+                duration: "190",
                 direction: "linear",
                 repeat: Infinity,
               }}
@@ -73,8 +73,8 @@ const Review = () => {
                 </div>
               ))}
             </motion.div>
-            <div className="absolute left-0 top-0 h-full w-20 bg-gradient-to-r from-inherit to-transparent z-10" />
-            <div className="absolute right-0 top-0 h-full w-20 bg-gradient-to-l from-inherit to-transparent z-10" />
+            <div className="absolute left-0 top-0 h-full w-20 bg-gradient-to-r from-[#F2F0EF] via-[#F2F0EF] to-transparent z-10" />
+            <div className="absolute right-0 top-0 h-full w-20 bg-gradient-to-l from-[#F2F0EF] via-[#F2F0EF] to-transparent z-10" />
           </div>
         </div>
       </div>

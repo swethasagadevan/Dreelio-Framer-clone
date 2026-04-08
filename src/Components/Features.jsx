@@ -64,7 +64,25 @@ const Features = () => {
             <h4 className='text-md xl:text-lg text-gray-500 font-bold'>{data.title}</h4>
             <h1 className='font-semibold text-4xl xl:text-6xl py-2'>{data.heading}</h1>
             <p className='text-xl pb-4'><strong>{data.subheading}</strong>{data.desc}</p>
-            <button className='bg-black text-white font-bold px-6 py-3 rounded-full'>Try Dreelio free</button>
+            <motion.button
+                            initial="rest"
+                            whileHover="hover"
+                            className='bg-black text-white px-6 py-4 rounded-full font-bold'
+                            >
+                              <div className='relative overflow-hidden leading-none'>
+                                <motion.span 
+                                variants={{rest:{y:0},hover:{y:"-100%"}}}
+                                transition={{duration:0.1,ease:"easeOut"}}
+                                className='block'
+                                >Try Dreelio free</motion.span>
+                                <motion.span
+                                variants={{rest:{y:"100%"},hover:{y:0}}}
+                                transition={{duration:0.1,ease:"easeOut"}}
+                                className='absolute inset-0 block'
+                                >Try Dreelio free</motion.span>
+                              </div>
+                            </motion.button>
+
             <div className=' mt-2 xl:absolute bottom-0 left-0 right-0'>
                 <div className='grid grid-cols-2 p-2 m-2'>
                     {data.buttons.map((data,index)=>(

@@ -15,7 +15,7 @@ const Home = () => {
     <>
       <Navbar/>
       <Hero/>
-      <section className='bg-gradient-to-b from-[#F9F8F8] via-[#F4F1EE] to-blue-200 pt-1'>
+      <section className='bg-gradient-to-b from-white via-[#F4F1EE] to-blue-200 pt-1'>
         <Scrollerbar/>
         <Features/>
         <Benefits/>
