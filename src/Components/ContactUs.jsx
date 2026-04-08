@@ -5,7 +5,7 @@ const ContactUs = () => {
   return (
     <div className='bg-gradient-to-b from-blue-200 via-blue-100 to-orange-100 pt-[10%] px-[5%] pb-[5%] xl:px-[20%]'>
     <div className='text-center'>
-        <h5 className="text-md text-gray-500 font-bold">CONTACT US</h5>
+        <span className="text-xs text-gray-500 font-bold bg-white rounded-full p-2">CONTACT US</span>
         <h2 className="text-5xl xl:text-7xl text-center font-semibold px-[10%] my-5">Let's connect</h2>
         <p className='text-gray-500 text-lg'>Have questions about Dreelio? Contact us </p>
         <p className='text-gray-500 text-lg'>and we’ll be happy to help.</p>

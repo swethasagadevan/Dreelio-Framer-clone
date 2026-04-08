@@ -10,7 +10,7 @@ const RouteContactUs = () => {
       <>
       <Navbar/>
       <ContactUs/>
-       <div className='bg-gradient-to-b from-white via-orange-100 to-blue-200 pt-[1%]'>
+       <div className='bg-gradient-to-b from-white via-[#F2F0EF] to-blue-200 pt-[1%]'>
         <Community/>
         <Review/>
         <Footer/>

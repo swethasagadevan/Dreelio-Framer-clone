@@ -26,9 +26,9 @@ const Blog = () => {
   ];
 
   return (
-    <div className="mx-[5%] xl:mx-[15%] mt-[10%]">
+    <div id="blog" className="mx-[5%] xl:mx-[15%] mt-[10%]">
       <div className="text-center">
-        <h5 className="text-md text-gray-500 font-bold">BLOG</h5>
+        <span className="text-xs text-gray-500 font-bold bg-white rounded-full p-2">BLOG</span>
         <h2 className="text-3xl xl:text-6xl text-center font-semibold px-[10%] mt-10">
           Ideas to level-up your freelance game
         </h2>
