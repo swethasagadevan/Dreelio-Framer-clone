@@ -49,7 +49,7 @@ const Features = () => {
         <div
         key={index} 
         id="features" 
-        className='relative flex m-10 gap-10 flex-wrap xl:flex-nowrap xl:mx-[15%]'>
+        className='relative flex m-10 gap-10 flex-wrap xl:flex-nowrap xl:mx-[15%] mt-[10%]'>
         <div 
         ref={ref}
         className={`p-[15%] xl:p-[5%] overflow-hidden bg-gradient-to-b from-blue-200 to-orange-50 rounded-2xl ${index==0?"order-2 xl:order-1":"order-2 xl:order-2"} w-full xl:w-1/2`}>

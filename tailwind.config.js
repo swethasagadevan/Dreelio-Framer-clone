@@ -7,7 +7,7 @@ export default {
   theme: {
     extend: {
        fontFamily: {
-      sans: ["Manrope", "sans-serif"],
+      sans: ["Varela Round", "sans-serif"],
       },
     },
   },

@@ -1,18 +1,17 @@
 import React, { useEffect, useState } from 'react'
-import {easeIn, motion} from 'framer-motion'
+import { motion} from 'framer-motion'
 import { FaBars,FaLeaf } from 'react-icons/fa'
-import {useNavigate} from 'react-router-dom'
-import { FaCross, FaX } from 'react-icons/fa6'
+import {FaX } from 'react-icons/fa6'
+import { HashLink } from 'react-router-hash-link'
 
 const Navbar = () => {
-  //const navigate = useNavigate()
 
     const [scrolled,setScrolled] = useState(false);
-    const navLinks =[{name:'Features',link:"#features"},
-    {name:'Benefits',link:"#benefits"},
-    {name:'Pricing',link:"#"},
-    {name:'Blog',link:"#"},
-    {name:'Contact Us',link:"#"},
+    const navLinks =[{name:'Features',link:"/#features"},
+    {name:'Benefits',link:"/#benefits"},
+    {name:'Pricing',link:"/#pricing"},
+    {name:'Blog',link:"/blog"},
+    {name:'Contact Us',link:"/contactus"},
   ];
 
   const [menuBar,setMenuBar]=useState(false)
@@ -39,10 +38,7 @@ const Navbar = () => {
   },[])
 
   const handleMenuBar = ()=>{
-      setMenuBar(true)
-  }
-  const handleMenuClose = ()=>{
-      setMenuBar(false)
+      setMenuBar(prev=>!prev)
   }
 
   
@@ -55,7 +51,7 @@ const Navbar = () => {
             borderRadius:scrolled?"50px":"0px",
         }}
         transition={{duration:0.5,ease:"easeInOut"}}
-        className={`fixed top-1 left-0 right-0 z-50 mx-[auto] `}
+        className={`fixed top-1 left-0 right-0 z-50 mx-[auto]`}
     >
 
     <div 
@@ -68,20 +64,20 @@ const Navbar = () => {
       
       <div className="hidden xl:flex items-center gap-6 sm:text-sm lg:text-lg">
         {navLinks.map((data,index)=>(
-            <a href={data.link} key={index}>{data.name}</a>
+            <HashLink to={data.link} key={index}>{data.name}</HashLink>
         ))}
       </div>
       <button className="bg-black font-bold text-white px-4 py-2 rounded-full hidden xl:inline-block sm:text-sm lg:text-lg">
           Try Dreelio free
       </button>
-      <div className='xl:hidden px-2 m' >
-         {menuBar?<FaX onClick={()=>handleMenuClose()}/>: <FaBars onClick={()=>handleMenuBar()}/>}
+      <div className='xl:hidden px-2' >
+         {menuBar?<FaX onClick={()=>handleMenuBar()}/>: <FaBars onClick={()=>handleMenuBar()}/>}
         </div>
         
     </div>
     {menuBar && <div className='relative text-center flex flex-col w-full shadow-lg backdrop-blur bg-white/60 rounded-3xl p-5 gap-5 mt-3'>
       {navLinks.map((data,i)=>(
-        <a href={data.link} key={i}>{data.name}</a>
+        <HashLink smooth to={data.link} key={i} onClick={()=>handleMenuBar()}>{data.name}</HashLink>
       ))}
       <button className='bg-black text-white py-2 rounded-full '>Try Dreelio free</button>
       

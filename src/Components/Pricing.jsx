@@ -33,7 +33,7 @@ const Pricing = () => {
   }
 
   return (
-    <div className='mx-[5%] xl:mx-[15%] mt-[10%]'>
+    <div id="pricing" className='mx-[5%] xl:mx-[15%] mt-[10%]'>
     <div className='text-center'>
         <h5 className="text-md text-gray-500 font-bold">PRICING</h5>
         <h2 className="text-3xl xl:text-6xl text-center font-semibold px-[10%] mt-10">Simple plans</h2>
@@ -72,6 +72,10 @@ const Pricing = () => {
         
         </div>
       ))}
+    </div>
+
+    <div className='text-center mt-[5%]'>
+      <p className=' text-gray-500'>Trusted by 7,000+ top startups, freelancers and studios</p>
     </div>
     </div>
   )

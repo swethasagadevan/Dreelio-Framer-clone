@@ -34,11 +34,7 @@ const Community = () => {
             </div>
         ))}
     </div>
-    <div className='text-center mt-32'>
-        <h2 className="text-3xl xl:text-5xl text-center font-semibold px-[10%] my-5">Ready to get started</h2>
-        <h5 className="text-lg text-gray-500 mb-5">Download Dreelio for free. No credit card required.</h5>
-        <button className='bg-black text-white font-bold py-4 px-8 rounded-full w-full md:w-fit'>Try Freelio free</button>
-    </div>
+    
     </div>
   )
 }

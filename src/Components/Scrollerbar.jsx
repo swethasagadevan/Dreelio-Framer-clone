@@ -42,7 +42,7 @@ const Scrollerbar = () => {
         <span className='text-l text-gray-500 font-bold'>SEAMLESS ACROSS DEVICES</span>
         <h2 className='font-bold text-5xl py-2'>Work from anywhere,</h2>
         <h2 className='font-bold text-5xl'>stay in sync</h2>
-        <div ref={ref}  style={{perspective:1000}} className='overflow-hidden xl:mx-[15%] mt-4 border rounded-3xl'>
+        <div  ref={ref}  style={{perspective:1000}} className='overflow-hidden xl:mx-[15%] mt-4 border rounded-3xl'>
         <motion.img
         src={featureimg}
         alt="work feature image"

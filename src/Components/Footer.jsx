@@ -17,6 +17,11 @@ const Footer = () => {
   return (
     
     <div className="pb-10 text-md">
+     <div className='text-center mt-32'>
+        <h2 className="text-3xl xl:text-5xl text-center font-semibold px-[10%] my-5">Ready to get started</h2>
+        <h5 className="text-lg text-gray-500 mb-5">Download Dreelio for free. No credit card required.</h5>
+        <button className='bg-black text-white font-bold py-4 px-8 rounded-full w-full md:w-fit'>Try Freelio free</button>
+    </div> 
     <div className="border rounded-3xl bg-white bg-opacity-30 mx-[5%] xl:mx-[15%] mt-[5%] p-10  ">
       <div className="grid md:grid-cols-2 gap-10 justify-between ">
         <div>
