@@ -36,7 +36,7 @@ const Blog = () => {
 
       <motion.div
         whileHover="hover"
-        className="grid grid-cols-2 bg-[#F5F9FC] gap-5 p-2 rounded-3xl border border-red-400 mt-10"
+        className="md:grid grid-cols-2 bg-[#F5F9FC] gap-5 p-2 rounded-3xl border border-red-400 mt-10"
       >
         <div className="overflow-hidden rounded-3xl">
           <motion.img
