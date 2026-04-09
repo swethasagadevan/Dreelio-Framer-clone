@@ -7,7 +7,7 @@ import ButtonFlip from './ButtonFlip'
 
 const Navbar = () => {
 
-    const [scrolled,setScrolled] = useState(false);
+    
     const navLinks =[{name:'Features',link:"/#features"},
     {name:'Benefits',link:"/#benefits"},
     {name:'Pricing',link:"/#pricing"},
@@ -15,41 +15,51 @@ const Navbar = () => {
     {name:'Contact Us',link:"/contactus"},
   ];
 
+  const [scrolled,setScrolled] = useState(false);
   const [menuBar,setMenuBar]=useState(false)
+  const [isMobile,setIsMobile]=useState(window.innerWidth<1200)
+  const isscrolled = isMobile || scrolled
 
   useEffect(()=>{
-    const handleScroll = ()=>{
-        if(window.innerWidth<1024){
-          setScrolled(true)
-        }
-        else{
-          setScrolled(window.scrollY>50)
-          setMenuBar(false)
-        }
-    };
-
-
-    window.addEventListener("scroll",handleScroll);
-    window.addEventListener("resize",handleScroll)
-
-    return ()=>{
-      window.removeEventListener("scroll",handleScroll)
-      window.removeEventListener("resize",handleScroll)
+    const handleResize =()=>{
+      setIsMobile(window.innerWidth<1200)
     }
+    window.addEventListener("resize",handleResize)
+    return ()=>window.removeEventListener("resize",handleResize)
   },[])
+
+ 
+
+useEffect(() => {
+  const handleScroll = () => {
+    setScrolled(window.scrollY > 50)
+  }
+
+  if (!isMobile) {
+    window.addEventListener("scroll", handleScroll)
+  }
+
+  return () => {
+    window.removeEventListener("scroll", handleScroll)
+  }
+}, [isMobile])
+
+
 
   const handleMenuBar = ()=>{
       setMenuBar(prev=>!prev)
   }
 
-  
   return (
     <>
+   
     <motion.nav
         initial={true}
         animate={{
-            width:scrolled?"60%":"70%",
-            borderRadius:scrolled?"50px":"0px",
+            width:isscrolled
+            ?(isMobile?"90%":"60%")
+            :"70%",
+            borderRadius:isscrolled?"50px":"0px",
         }}
         transition={{duration:0.5,ease:"easeInOut"}}
         className={`fixed top-1 left-0 right-0 z-50 mx-[auto]`}
@@ -57,7 +67,7 @@ const Navbar = () => {
 
     <div 
     className={`flex justify-between items-center px-2 py-4 rounded-full
-      ${scrolled ? " shadow-lg backdrop-blur bg-white/60" : "bg-transparent"}`}>
+      ${isscrolled ? " shadow-lg backdrop-blur bg-white/60" : "bg-transparent"}`}>
       <h1 
       className="sm:text-lg lg:text-xl font-bold flex gap-2 items-center"
       

@@ -6,7 +6,7 @@ const Hero = () => {
   //for text typing effect
 
   const textArray = [
-    "Run your freelance", "business like a pro",
+    "Run your freelance business like a pro",
     "All-in-one platform for managing clients, projects, and payments without the chaos. From first contract to final invoice, we’ve got your back."
   ]
 
@@ -23,18 +23,19 @@ const Hero = () => {
   const y = useTransform(scrollYProgress, [0, 1], [100, 0]); //move up
 
   return (
+    <div className="bg-gradient-to-b from-blue-200 via-blue-200 to-orange-100">
     <motion.div 
     initial="hidden"
     animate="visible"
     transition={{staggerChildren:0.25,delayChildren:0.02}}
-    className=" bg-gradient-to-b from-blue-200 to-orange-100 px-[10%] xl:px-[20%] pt-[20%] xl:pt-[10%] text-center">
+    className=" px-[5%] md:px-[10%] xl:px-[20%] pt-[25%] lg:pt-[10%] text-center">
         {textArray.map((line,i)=>(
           <motion.div
             key={i}
             variants={{
               hidden:{opacity:0},visible:{opacity:1}
             }}
-            className={`${i==2?'sm:text-l lg:text-xl px-[10%] text-gray-500 my-5':'font-bold text-4xl md:text-5xl xl:text-7xl'}`}
+            className={`${i==1?'sm:text-l lg:text-xl text-gray-500 xl:px-[11%]  my-5':'font-bold text-4xl md:text-6xl xl:text-7xl'}`}
           >
             {line}
           </motion.div>
@@ -82,20 +83,21 @@ const Hero = () => {
                 </motion.button>
 
       </div>
-      
+    
+      </motion.div>
       <div
         ref={ref}
-        className="h-[200px] sm:h-[300px] lg:h-[400px] mt-3 overflow-hidden relative"
+        className="h-[100px] md:h-[200px] lg:h-[300px] xl:h-[400px] mt-10 overflow-hidden relative mx-[10%]"
         style={{ perspective: 1000 }}
       >
         <motion.img
           src={profileimage}
           alt="profile image"
           style={{ rotateX, scale, y }}
-          className="m-auto w-[100%]"
+          className="m-auto w-fit h-fit"
         ></motion.img>
       </div>
-      </motion.div>
+      </div>
   );
 };
 
