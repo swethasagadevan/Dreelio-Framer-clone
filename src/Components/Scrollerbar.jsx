@@ -13,10 +13,15 @@ const Scrollerbar = () => {
 
     const scale =useTransform(scrollYProgress,[0,1],[2,1])
 
-    const startupList = ["Milano","luminous","Theo","Amsterdam","Savannah"]
+    const startupList = ["Milano","luminous","Theo","Amsterdam","Savannah","Theo","Amsterdam","Savannah"]
   return (
     <>
-    <div className='relative overflow-hidden text-center m-[5%]'> 
+    <motion.div 
+    initial={{opacity:0,y:80}}
+    whileInView={{opacity:1,y:0}}
+    viewport={{once:true}}
+    transition={{duration:1,ease:[0.25, 0.1, 0.25, 1]}}
+    className='relative overflow-hidden text-center m-[5%]'> 
       <p>Trusted by 7,000+ top startups, freelancers and studios</p>
       {/* <div className="relative overflow-hidden"> */}
   <div className="absolute left-0 top-0 h-full w-1/4 bg-gradient-to-r from-white via-white to-transparent z-10" />
@@ -25,8 +30,8 @@ const Scrollerbar = () => {
       <motion.div
         animate={{x:["0%","-100%"]}}
         transition={{
-            ease:'linear',
-            duration:20,
+            ease:"linear",
+            duration:"90",
             repeat:Infinity
         }}
         className={' flex gap-10 mx-[20%] my-2'}
@@ -37,8 +42,13 @@ const Scrollerbar = () => {
       </motion.div>
 
 
-    </div>
-    <div className='relative text-center' >
+    </motion.div>
+    <motion.div
+    initial={{opacity:0,y:80}}
+    whileInView={{opacity:1,y:0}}
+    viewport={{once:true}}
+    transition={{duration:1,ease:[0.25, 0.1, 0.25, 1]}}
+    className='relative text-center' >
         <span className='text-l text-gray-500 font-bold'>SEAMLESS ACROSS DEVICES</span>
         <h2 className='font-bold text-5xl py-2'>Work from anywhere,</h2>
         <h2 className='font-bold text-5xl'>stay in sync</h2>
@@ -93,7 +103,7 @@ const Scrollerbar = () => {
                                         </motion.button>
         </div>
 
-    </div>
+    </motion.div>
     </>
   )
 }

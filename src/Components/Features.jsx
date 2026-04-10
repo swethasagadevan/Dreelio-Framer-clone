@@ -6,14 +6,6 @@ import {FaChartLine, FaDollarSign, FaFileInvoice, FaList, FaRegClock,FaShapes,Fa
 import { FaRegFilePdf } from 'react-icons/fa6'
 
 const Features = () => {
-    const ref = useRef()
-
-    const {scrollYProgress} = useScroll({
-        target:ref,
-        offset:['start end','center center']
-    })
-
-    const y = useTransform(scrollYProgress,[0,1],[0,100])
 
     const featureList = [{
         image:featuresimgone,
@@ -42,28 +34,34 @@ const Features = () => {
         ]
     }
 ]
-
   return (
+    
     <>
     {featureList.map((data,index)=>(
-        <div
+        <motion.div
         key={index} 
         id="features" 
-        className='relative flex m-10 gap-10 flex-wrap xl:flex-nowrap xl:mx-[15%] mt-[10%]'>
+        initial={{opacity:0,y:80}}
+        whileInView={{opacity:1,y:0}}
+        viewport={{once:true,margin:"-150px"}}
+        transition={{duration: 1,ease: [0.25, 0.1, 0.25, 1]}}
+        className='relative flex mx-2 gap-10 flex-wrap xl:flex-nowrap xl:mx-[15%] mt-[10%]'>
         <div 
-        ref={ref}
-        className={`p-[15%] xl:p-[5%] overflow-hidden bg-gradient-to-b from-blue-200 to-orange-50 rounded-2xl ${index==0?"order-2 xl:order-1":"order-2 xl:order-2"} w-full xl:w-1/2`}>
+        className={`p-[5%] overflow-hidden bg-gradient-to-b from-blue-200 via-blue-200 to-[#F0E2D7] rounded-2xl ${index==0?"order-2 xl:order-1":"order-2 xl:order-2"} w-full xl:w-1/2`}>
             <motion.img
-            style={{y}}
+            initial={{opacity:0,y:80}}
+        whileInView={{opacity:1,y:0}}
+        viewport={{once:true,margin:"-150px"}}
+        transition={{duration: 1,ease: [0.25, 0.1, 0.25, 1]}}
             src={data.image}
             className='w-full'
             >
             </motion.img>
         </div>
-        <div className={`relative py-4 my-5 w-full xl:w-1/2 ${index==0?"order-1 xl:order-2":"order-1 xl:order-1"}`}>
-            <h4 className='text-md xl:text-lg text-gray-500 font-bold'>{data.title}</h4>
-            <h1 className='font-semibold text-4xl xl:text-6xl py-2'>{data.heading}</h1>
-            <p className='text-xl pb-4'><strong>{data.subheading}</strong>{data.desc}</p>
+        <div className={`relative m-2 w-full xl:w-1/2 ${index==0?"order-1 xl:order-2":"order-1 xl:order-1"}`}>
+            <h4 className='md:text-sm lg:text-md xl:text-lg text-gray-500 font-bold'>{data.title}</h4>
+            <h1 className='font-semibold text-2xl xl:text-5xl py-3'>{data.heading}</h1>
+            <p className='text-md xl:text-xl pb-4 text-gray-700'><strong>{data.subheading}</strong>{data.desc}</p>
             <motion.button
                             initial="rest"
                             whileHover="hover"
@@ -95,7 +93,7 @@ const Features = () => {
             </div>
         </div>
         
-    </div>
+    </motion.div>
     ))}
     </>
   )

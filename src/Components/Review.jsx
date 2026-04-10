@@ -32,9 +32,17 @@ const Review = () => {
   ];
 
   return (
-      <div className="mt-[10%] mx-[5%] xl:mx-[15%]">
+      <motion.div 
+      initial={{opacity:0,y:80}}
+      whileInView={{opacity:1,y:0}}
+      transition={{ease:[0.25, 0.1, 0.25, 1],duration:1}}
+      viewport={{once:true}}
+      className="mt-[10%] xl:mx-[15%]">
         <h2 className="text-xl xl:text-6xl text-center font-medium mx-[10%]">
-          "Dreelio is by far the best agency tool I have ever used"
+          "Dreelio is by far the best
+        </h2>
+        <h2 className="text-xl xl:text-6xl text-center font-medium mx-[10%]">
+          agency tool I have ever used"
         </h2>
         <div className="text-center mt-10">
           <div>
@@ -52,9 +60,9 @@ const Review = () => {
             </div>
           </div>
 
-          <div className="relative overflow-hidden mt-10">
+          <div className="relative overflow-hidden mt-10 p-2">
             <motion.div
-              animate={{ x: ["0%", "-50%"] }}
+              animate={{ x: ["0%", "-100%"] }}
               transition={{
                 duration: "90",
                 direction: "linear",
@@ -63,7 +71,7 @@ const Review = () => {
               className={"flex w-max"}
             >
               {[...reviews,...reviews].map((data, index) => (
-                <div key={index} className="rounded-2xl text-left bg-white p-4 mr-5 w-[350px]">
+                <div key={index} className="rounded-2xl text-left bg-white py-8 px-3 mr-5 w-[350px]">
                   <p>"{data.text}"</p>
                   <div className="flex items-center gap-5 mt-8">
                     <img
@@ -83,7 +91,7 @@ const Review = () => {
             <div className="absolute right-0 top-0 h-full w-32 bg-gradient-to-l from-[#F2F0EF] via-[#F2F0EF] to-transparent z-10" />
           </div>
         </div>
-      </div>
+      </motion.div>
   )
 }
 

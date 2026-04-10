@@ -7,7 +7,7 @@ export default {
   theme: {
     extend: {
        fontFamily: {
-      sans: ["Varela Round", "sans-serif"],
+      sans: ['"Open Runde"', 'Inter', 'sans-serif'],
       },
     },
   },

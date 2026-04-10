@@ -3,3 +3,26 @@
 @tailwind utilities;
 
 
+@font-face {
+  font-family: "Open Runde";
+  src: url("../src/assets/Font/OpenRunde-Regular-BF64ee9c6978988.woff") format("woff2");
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "Open Runde";
+  src: url("../src/assets/Font/OpenRunde-Medium-BF64ee9c695513a.woff") format("woff2");
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: "Open Runde";
+  src: url("../src/assets/Font/OpenRunde-Semibold-BF64ee9c69788f3.woff") format("woff2");
+  font-weight: 600;
+}
+
+@font-face {
+  font-family: "Open Runde";
+  src: url("../src/assets/Font/OpenRunde-Bold-BF64ee9c696534f.woff") format("woff2");
+  font-weight: 700;
+}

@@ -3,7 +3,6 @@ import { motion} from 'framer-motion'
 import { FaBars,FaLeaf } from 'react-icons/fa'
 import {FaX } from 'react-icons/fa6'
 import { HashLink } from 'react-router-hash-link'
-import ButtonFlip from './ButtonFlip'
 
 const Navbar = () => {
 
@@ -66,14 +65,14 @@ useEffect(() => {
     >
 
     <div 
-    className={`flex justify-between items-center px-2 py-4 rounded-full
-      ${isscrolled ? " shadow-lg backdrop-blur bg-white/60" : "bg-transparent"}`}>
+    className={`flex justify-between items-center px-5 py-3 rounded-full
+      ${isscrolled ? " shadow-lg backdrop-blur bg-white/20" : "bg-transparent"}`}>
       <h1 
-      className="sm:text-lg lg:text-xl font-bold flex gap-2 items-center"
+      className="sm:text-lg lg:text-xl font-semibold flex gap-2 items-center"
       
       ><FaLeaf/> <HashLink smooth to="/" >Dreelio</HashLink> </h1>
       
-      <div className="hidden xl:flex items-center gap-2 sm:text-sm lg:text-lg">
+      <div className="hidden xl:flex items-center gap-2 sm:text-sm lg:text-base">
         {navLinks.map((data,index)=>(
             <HashLink smooth to={data.link} key={index} className='hover:bg-white/30 rounded-full py-1 px-4' >{data.name}</HashLink>
         ))}
@@ -81,7 +80,7 @@ useEffect(() => {
         <motion.button
         initial="rest"
         whileHover="hover"
-        className='bg-black text-white px-6 py-4 rounded-full font-bold hidden xl:inline-block sm:text-sm lg:text-lg'
+        className='bg-black text-white px-6 py-4 rounded-full font-semibold hidden xl:inline-block sm:text-sm lg:text-base'
         >
           <div className='relative overflow-hidden leading-none'>
             <motion.span 

@@ -6,7 +6,7 @@ const Hero = () => {
   //for text typing effect
 
   const textArray = [
-    "Run  your  freelance  business  like  a  pro",
+    "Run your freelance business like a pro",
     "All-in-one platform for managing clients, projects, and payments without the chaos. From first contract to final invoice, we’ve got your back."
   ]
 
@@ -27,11 +27,12 @@ const Hero = () => {
     <motion.div 
   initial="hidden"
   animate="visible"
+  viewport={{once:"true"}}
   transition={{ staggerChildren: 0.03, delayChildren: 0.1 }}
-  className="px-[5%] md:px-[10%] xl:px-[20%] pt-[25%] lg:pt-[10%] text-center"
+  className="md:px-[10%] xl:px-[15%] pt-[25%] lg:pt-[10%] text-center"
 >
   {textArray.map((line, i) => (
-    <div key={i} className="my-3 xl:mx-[10%] xl:my-5">
+    <div key={i} className={`my-3 xl:mx-[10%] xl:my-5 ${i==1 ?'px-[7%]':''}`}>
       
       {line.split(" ").map((word, index) => (
         <motion.span
@@ -47,10 +48,10 @@ const Hero = () => {
               }
             }
           }}
-          className={`inline-block mr-2 ${
+          className={`inline-block  ${
             i == 1
-              ? "sm:text-l lg:text-xl text-gray-500"
-              : "font-bold text-4xl md:text-6xl xl:text-7xl"
+              ? "sm:text-l lg:text-xl mr-1 text-gray-500"
+              : "font-semibold mr-[0.2em] text-4xl md:text-6xl xl:text-7xl"
           }`}
         >
           {word}
@@ -108,14 +109,14 @@ const Hero = () => {
       </motion.div>
       <div
         ref={ref}
-        className="h-[100px] md:h-[200px] lg:h-[300px] xl:h-[400px] mt-10 overflow-hidden relative mx-[10%]"
+        className="h-[100px] sm:h-[200px] md:h-[300px] lg:h-[400px] xl:h-[500px] mt-10 overflow-hidden relative mx-[10%]"
         style={{ perspective: 1000 }}
       >
         <motion.img
           src={profileimage}
           alt="profile image"
           style={{ rotateX, scale, y }}
-          className="m-auto w-fit h-fit"
+          className="w-fit h-fit object-contain"
         ></motion.img>
       </div>
       </div>
