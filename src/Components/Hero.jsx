@@ -31,7 +31,7 @@ const Hero = () => {
   className="px-[5%] md:px-[10%] xl:px-[20%] pt-[25%] lg:pt-[10%] text-center"
 >
   {textArray.map((line, i) => (
-    <div key={i} className="my-3 mx-[10%]">
+    <div key={i} className="my-3 xl:mx-[10%] xl:my-5">
       
       {line.split(" ").map((word, index) => (
         <motion.span
