@@ -6,7 +6,7 @@ const Hero = () => {
   //for text typing effect
 
   const textArray = [
-    "Run your freelance business like a pro",
+    "Run  your  freelance  business  like  a  pro",
     "All-in-one platform for managing clients, projects, and payments without the chaos. From first contract to final invoice, we’ve got your back."
   ]
 
@@ -25,21 +25,42 @@ const Hero = () => {
   return (
     <div className="bg-gradient-to-b from-blue-200 via-blue-200 to-orange-100">
     <motion.div 
-    initial="hidden"
-    animate="visible"
-    transition={{staggerChildren:0.25,delayChildren:0.02}}
-    className=" px-[5%] md:px-[10%] xl:px-[20%] pt-[25%] lg:pt-[10%] text-center">
-        {textArray.map((line,i)=>(
-          <motion.div
-            key={i}
-            variants={{
-              hidden:{opacity:0},visible:{opacity:1}
-            }}
-            className={`${i==1?'sm:text-l lg:text-xl text-gray-500 xl:px-[11%]  my-5':'font-bold text-4xl md:text-6xl xl:text-7xl'}`}
-          >
-            {line}
-          </motion.div>
-        ))}
+  initial="hidden"
+  animate="visible"
+  transition={{ staggerChildren: 0.03, delayChildren: 0.1 }}
+  className="px-[5%] md:px-[10%] xl:px-[20%] pt-[25%] lg:pt-[10%] text-center"
+>
+  {textArray.map((line, i) => (
+    <div key={i} className="my-3 mx-[10%]">
+      
+      {line.split(" ").map((word, index) => (
+        <motion.span
+          key={index}
+          variants={{
+            hidden: { opacity: 0, y: 20 },
+            visible: {
+              opacity: 1,
+              y: 0,
+              transition: {
+                duration: 0.3,
+                ease: "easeOut"
+              }
+            }
+          }}
+          className={`inline-block mr-2 ${
+            i == 1
+              ? "sm:text-l lg:text-xl text-gray-500"
+              : "font-bold text-4xl md:text-6xl xl:text-7xl"
+          }`}
+        >
+          {word}
+        </motion.span>
+      ))}
+
+    </div>
+  ))}
+
+
 
   
       <div className="grid gap-5 md:flex md:justify-center ">
