@@ -19,7 +19,7 @@ const Footer = () => {
   ];
   return (
     
-    <div className="pb-10 text-md relative overflow-hidden">
+    <div className="pb-10 text-md relative overflow-hidden p-4 mx-auto">
      <motion.div 
      initial={{opacity:0,y:80}}
       whileInView={{opacity:1,y:0}}
@@ -48,7 +48,7 @@ const Footer = () => {
                               </div>
                             </motion.button>
     </motion.div> 
-    <div className="border rounded-3xl bg-white bg-opacity-30 mx-[5%] xl:mx-[15%] mt-[5%] p-5  ">
+    <div className="border rounded-3xl bg-white bg-opacity-30 container max-w-5xl mx-auto p-4 ">
       <div className="grid md:grid-cols-2 gap-10 justify-between pb-10 md:pb-20">
         <div>
           <h2 className="font-bold text-xl flex items-center gap-2 flex-wrap">
