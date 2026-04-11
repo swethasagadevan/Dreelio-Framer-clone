@@ -55,7 +55,7 @@ const itemVariants = {
 };
 
   return (
-    <div id="pricing" className='mx-[5%] xl:mx-[15%] mt-[10%]'>
+    <div id="pricing" className='container p-4 mt-16 max-w-6xl mx-auto'>
     <motion.div
     initial={{opacity:0,y:80}}
     whileInView={{opacity:1,y:0}}
@@ -63,8 +63,8 @@ const itemVariants = {
     viewport={{once:true}}
   className='text-center'>
         <h5 className="text-md text-gray-500 font-bold">PRICING</h5>
-        <h2 className="text-3xl xl:text-6xl text-center font-semibold px-[10%] mt-5">Simple plans</h2>
-        <h2 className="text-3xl xl:text-6xl text-center font-semibold px-[10%]">for serious work</h2>
+        <h2 className="text-3xl xl:text-6xl text-center font-semibold mt-5">Simple plans</h2>
+        <h2 className="text-3xl xl:text-6xl text-center font-semibold">for serious work</h2>
     </motion.div>
 
     <motion.div

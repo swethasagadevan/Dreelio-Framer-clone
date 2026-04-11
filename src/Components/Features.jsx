@@ -45,27 +45,27 @@ const Features = () => {
         whileInView={{opacity:1,y:0}}
         viewport={{once:true,margin:"-150px"}}
         transition={{duration: 1,ease: [0.25, 0.1, 0.25, 1]}}
-        className='relative flex mx-2 gap-10 flex-wrap xl:flex-nowrap xl:mx-[15%] mt-[10%]'>
+        className='container p-4 flex gap-10 flex-wrap xl:flex-nowrap mt-16 max-w-6xl mx-auto'>
         <div 
-        className={`p-[5%] overflow-hidden bg-gradient-to-b from-blue-200 via-blue-200 to-[#F0E2D7] rounded-2xl ${index==0?"order-2 xl:order-1":"order-2 xl:order-2"} w-full xl:w-1/2`}>
+        className={`py-10 px-28 overflow-hidden bg-gradient-to-b from-blue-200 via-blue-200 to-[#F0E2D7] rounded-2xl ${index==0?"order-2 xl:order-1":"order-2 xl:order-2"} xl:w-1/2`}>
             <motion.img
             initial={{opacity:0,y:80}}
         whileInView={{opacity:1,y:0}}
         viewport={{once:true,margin:"-150px"}}
         transition={{duration: 1,ease: [0.25, 0.1, 0.25, 1]}}
             src={data.image}
-            className='w-full'
+            className=''
             >
             </motion.img>
         </div>
         <div className={`relative m-2 w-full xl:w-1/2 ${index==0?"order-1 xl:order-2":"order-1 xl:order-1"}`}>
-            <h4 className='md:text-sm lg:text-md xl:text-lg text-gray-500 font-bold'>{data.title}</h4>
-            <h1 className='font-semibold text-2xl xl:text-5xl py-3'>{data.heading}</h1>
-            <p className='text-md xl:text-xl pb-4 text-gray-700'><strong>{data.subheading}</strong>{data.desc}</p>
+            <h4 className='md:text-sm lg:text-lg text-gray-500 font-bold'>{data.title}</h4>
+            <h1 className='font-semibold text-xl lg:text-4xl py-3'>{data.heading}</h1>
+            <p className='text-md lg:text-xl pb-4 text-gray-700'><strong>{data.subheading}</strong>{data.desc}</p>
             <motion.button
                             initial="rest"
                             whileHover="hover"
-                            className='bg-black text-white px-6 py-4 rounded-full font-bold'
+                            className='bg-black text-white px-6 py-4 rounded-full font-bold mb-4'
                             >
                               <div className='relative overflow-hidden leading-none'>
                                 <motion.span 
@@ -81,10 +81,10 @@ const Features = () => {
                               </div>
                             </motion.button>
 
-            <div className=' mt-2 xl:absolute bottom-0 left-0 right-0'>
-                <div className='grid grid-cols-2 p-2 m-2'>
+            <div className='mt-4 xl:absolute bottom-0 left-0 right-0'>
+                <div className='grid grid-cols-2 p-2'>
                     {data.buttons.map((data,index)=>(
-                        <div key={index} className='border border-gray-300 rounded-full p-3 m-2 flex items-center gap-2'>
+                        <div key={index} className='border border-gray-300 rounded-full px-4 py-2 m-1 flex items-center gap-2'>
                             {data.icon}{data.title}
                         </div>
                     ))}

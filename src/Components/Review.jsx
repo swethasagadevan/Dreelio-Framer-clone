@@ -1,35 +1,61 @@
 import React from 'react'
 import reviewMainImage from "../assets/user_review.avif";
-import reviewimg from "../assets/review_1.avif";
+import reviewimg1 from "../assets/review_1.avif";
+import reviewimg2 from "../assets/review_2.avif";
+import reviewimg3 from "../assets/review_3.avif";
 import { motion } from "framer-motion";
 
 const Review = () => {
      const reviews = [
     {
       text: "As a fast-moving design team, we needed a tool that matched our pace. From client onboarding to getting paid, this just works clean, fast, and beautifully built.",
-      img: reviewimg,
+      img: reviewimg1,
       name: "Sergio Walker",
       desgination: "Agency Owner",
     },
     {
       text: "As a fast-moving design team, we needed a tool that matched our pace. From client onboarding to getting paid, this just works clean, fast, and beautifully built.",
-      img: reviewimg,
+      img: reviewimg2,
+      name: "Jane Jay",
+      desgination: "Project Manager, Google",
+    },
+    {
+      text: "Managing projects used to mean spreadsheets, DMs, and missed invoices. This platform keeps our workflows tight and our clients impressed.",
+      img: reviewimg3,
+      name: "Amos Chen",
+      desgination: "Art Director, Pentagram",
+    },
+    {
+      text: "We used to duct-tape tools together. Now our contracts, time tracking, and payments live in one clean system. It's everything a small team needs to stay pro.",
+      img: reviewimg1,
+      name: "Leah Daniel",
+      desgination: "Design ops Lead, teamwork",
+    },
+    {
+      text: "As a fast-moving design team, we needed a tool that matched our pace. From client onboarding to getting paid, this just works clean, fast, and beautifully built.",
+      img: reviewimg1,
       name: "Sergio Walker",
       desgination: "Agency Owner",
     },
     {
       text: "As a fast-moving design team, we needed a tool that matched our pace. From client onboarding to getting paid, this just works clean, fast, and beautifully built.",
-      img: reviewimg,
-      name: "Sergio Walker",
-      desgination: "Agency Owner",
+      img: reviewimg2,
+      name: "Jane Jay",
+      desgination: "Project Manager, Google",
     },
     {
-      text: "As a fast-moving design team, we needed a tool that matched our pace. From client onboarding to getting paid, this just works clean, fast, and beautifully built.",
-      img: reviewimg,
-      name: "Sergio Walker",
-      desgination: "Agency Owner",
+      text: "Managing projects used to mean spreadsheets, DMs, and missed invoices. This platform keeps our workflows tight and our clients impressed.",
+      img: reviewimg3,
+      name: "Amos Chen",
+      desgination: "Art Director, Pentagram",
     },
-  ];
+    {
+      text: "We used to duct-tape tools together. Now our contracts, time tracking, and payments live in one clean system. It's everything a small team needs to stay pro.",
+      img: reviewimg1,
+      name: "Leah Daniel",
+      desgination: "Design ops Lead, teamwork",
+    },
+  ]
 
   return (
       <motion.div 
@@ -37,11 +63,11 @@ const Review = () => {
       whileInView={{opacity:1,y:0}}
       transition={{ease:[0.25, 0.1, 0.25, 1],duration:1}}
       viewport={{once:true}}
-      className="mt-[10%] xl:mx-[15%]">
-        <h2 className="text-xl xl:text-6xl text-center font-medium mx-[10%]">
+      className="mt-16 container p-4 max-w-6xl mx-auto">
+        <h2 className="text-xl xl:text-6xl text-center font-medium">
           "Dreelio is by far the best
         </h2>
-        <h2 className="text-xl xl:text-6xl text-center font-medium mx-[10%]">
+        <h2 className="text-xl xl:text-6xl text-center font-medium">
           agency tool I have ever used"
         </h2>
         <div className="text-center mt-10">
@@ -50,7 +76,7 @@ const Review = () => {
               <img
                 src={reviewMainImage}
                 alt="user image"
-                className="w-[100%] rounded-full"
+                className="w-[100%] rounded-full object-fit"
               />
             </div>
 
@@ -64,7 +90,7 @@ const Review = () => {
             <motion.div
               animate={{ x: ["0%", "-100%"] }}
               transition={{
-                duration: "90",
+                duration: "200",
                 direction: "linear",
                 repeat: Infinity,
               }}
@@ -77,11 +103,11 @@ const Review = () => {
                     <img
                       src={data.img}
                       alt="review image"
-                      className="w-[50px] h-[50px] rounded-full"
+                      className="w-[50px] h-[50px] rounded-full object-cover"
                     />
                     <div>
-                      <p className="font-bold text-gray-800">{data.name}</p>
-                      <p className="text-gray-600">{data.desgination}</p>
+                      <p className="font-semibold text-base text-gray-800">{data.name}</p>
+                      <p className=" text-sm text-gray-600">{data.desgination}</p>
                     </div>
                   </div>
                 </div>

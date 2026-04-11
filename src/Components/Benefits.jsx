@@ -80,7 +80,7 @@ const itemVariants = {
  
 
   return (
-    <div id="benefits" className="mx-[5%] xl:mx-[15%] mt-[10%]">
+    <div id="benefits" className="container p-4 mt-16 max-w-6xl mx-auto">
       <motion.div 
     initial={{opacity:0,y:80}}
     whileInView={{opacity:1,y:0}}
@@ -89,7 +89,7 @@ const itemVariants = {
      className="text-center">
         <h5 className="text-md xl:text-lg text-gray-500 font-bold">FEATURES</h5>
         <h2 className="font-semibold text-3xl xl:text-5xl py-2">
-          Built for freelancers,{" "}
+          Built for freelancers,
         </h2>
         <h2 className="font-semibold text-3xl xl:text-5xl py-2">
           powered by simplicity
@@ -124,7 +124,7 @@ const itemVariants = {
               </motion.div>
             </div></>}
 
-            {index==0 && <div> 
+            {index==0 && <div className="mx-auto"> 
                 {data.img.map((dataimg, index) => (
                     <img key={index} src={dataimg} />
               ))}
@@ -146,7 +146,7 @@ const itemVariants = {
           <motion.div
           variants={itemVariants}
           key={index} className="bg-[#F0EAE5] flex flex-col rounded-2xl p-10 flex-grow">
-            <div className="bg-white rounded-full w-fit p-2 mb-[15%]">
+            <div className="bg-white rounded-full w-fit p-2">
               <p className="text-3xl">{data.icon}</p>
             </div>
             <h2 className="font-bold text-xl my-3">{data.title}</h2>

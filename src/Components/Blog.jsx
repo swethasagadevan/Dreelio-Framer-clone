@@ -48,7 +48,7 @@ const itemVariants = {
 
     return (
       <div 
-      id="blog" className="xl:mx-[15%] mt-[10%] p-2">
+      id="blog" className="container mt-16 p-4 max-w-6xl mx-auto">
         <motion.div 
         initial={{opacity:0,y:80}}
         whileInView={{opacity:1,y:0}}
@@ -56,7 +56,7 @@ const itemVariants = {
         viewport={{once:true}}
         className="text-center">
           <span className="text-xs text-gray-500 font-bold bg-white rounded-full p-2">BLOG</span>
-          <h2 className="text-3xl xl:text-6xl text-center font-semibold px-[10%] mt-10">
+          <h2 className="text-3xl xl:text-6xl text-center font-semibold mt-10 container max-w-2xl mx-auto">
             Ideas to level-up your freelance game
           </h2>
         </motion.div>
@@ -120,6 +120,7 @@ const itemVariants = {
             <motion.div 
   variants={itemVariants}
             key={i}
+            className=" container"
             >
               <div className="rounded-3xl overflow-hidden h-[300px] ">
                 <motion.img
@@ -133,8 +134,8 @@ const itemVariants = {
                 ></motion.img>
               </div>
 
-              <div className="flex justify-between items-center py-2 gap-5">
-                <h3 className="font-semibold text-xl text-gray-800">
+              <div className="container flex justify-between items-center py-2">
+                <h3 className="font-semibold text-xl text-gray-800 px-4">
                   {data.text}
                 </h3>
                 <div>

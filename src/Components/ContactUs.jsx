@@ -3,17 +3,16 @@ import { motion } from 'framer-motion'
 
 const ContactUs = () => {
   return (
-    <div className='bg-gradient-to-b from-blue-200 via-blue-100 to-orange-100 pt-[10%] px-[5%] pb-[5%] xl:px-[20%]'>
-    <div className='text-center'>
+    <div className='bg-gradient-to-b from-blue-200 via-blue-100 to-orange-100 p-4 pt-[5%]'>
+    <div className='text-center p-4'>
         <span className="text-xs text-gray-500 font-bold bg-white rounded-full p-2">CONTACT US</span>
         <h2 className="text-5xl xl:text-7xl text-center font-semibold px-[10%] my-5">Let's connect</h2>
         <p className='text-gray-500 text-lg'>Have questions about Dreelio? Contact us </p>
         <p className='text-gray-500 text-lg'>and we’ll be happy to help.</p>
     </div>
 
-    <div className='xl:mx-[15%] mt-[5%] bg-[#ECF0F5] p-10 rounded-3xl'>
-        <form action="">
-            <div className='xl:grid xl:grid-cols-2 gap-5'>
+        <form action="" className=' bg-[#ECF0F5] p-6 rounded-3xl container w-fit mx-auto'>
+            <div className='md:grid md:grid-cols-2 gap-5'>
                 <div>
                     <label htmlFor="name">Name</label>
                     <input type="text" placeholder='Eg. Jane Smith' className='w-full rounded-xl p-3 mb-5'/>
@@ -54,7 +53,6 @@ const ContactUs = () => {
         </form>
     </div>
       
-    </div>
   )
 }
 

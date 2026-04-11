@@ -11,7 +11,7 @@ const Scrollerbar = () => {
       offset:["start 80%","center center"]
     })
 
-    const scale =useTransform(scrollYProgress,[0,1],[2,1])
+    const scale =useTransform(scrollYProgress,[0,0.7],[1.5,1])
 
     const startupList = ["Milano","luminous","Theo","Amsterdam","Savannah","Theo","Amsterdam","Savannah"]
   return (
@@ -21,7 +21,7 @@ const Scrollerbar = () => {
     whileInView={{opacity:1,y:0}}
     viewport={{once:true}}
     transition={{duration:1,ease:[0.25, 0.1, 0.25, 1]}}
-    className='relative overflow-hidden text-center m-[5%]'> 
+    className='relative overflow-hidden text-center my-10 container mx-auto max-w-6xl p-4'> 
       <p>Trusted by 7,000+ top startups, freelancers and studios</p>
       {/* <div className="relative overflow-hidden"> */}
   <div className="absolute left-0 top-0 h-full w-1/4 bg-gradient-to-r from-white via-white to-transparent z-10" />
@@ -30,11 +30,11 @@ const Scrollerbar = () => {
       <motion.div
         animate={{x:["0%","-100%"]}}
         transition={{
-            ease:"linear",
             duration:"90",
+            ease:"linear",
             repeat:Infinity
         }}
-        className={' flex gap-10 mx-[20%] my-2'}
+        className={' flex gap-10 container my-2'}
       >
         {[...startupList,...startupList].map((data,index)=>(
             <span key={index} className='text-2xl font-extrabold text-gray-500'>{data}</span>
@@ -47,12 +47,12 @@ const Scrollerbar = () => {
     initial={{opacity:0,y:80}}
     whileInView={{opacity:1,y:0}}
     viewport={{once:true}}
-    transition={{duration:1,ease:[0.25, 0.1, 0.25, 1]}}
-    className='relative text-center' >
-        <span className='text-l text-gray-500 font-bold'>SEAMLESS ACROSS DEVICES</span>
-        <h2 className='font-bold text-5xl py-2'>Work from anywhere,</h2>
-        <h2 className='font-bold text-5xl'>stay in sync</h2>
-        <div  ref={ref}  style={{perspective:1000}} className='overflow-hidden xl:mx-[15%] mt-4 border rounded-3xl'>
+    transition={{duration:1.5,ease:[0.25, 0.1, 0.25, 1]}}
+    className='container relative text-center p-4 max-w-6xl mx-auto mt-10' >
+        <p className='text-sm lg:text-base text-gray-500 font-bold py-4'>SEAMLESS ACROSS DEVICES</p>
+        <h2 className='font-bold text-2xl lg:text-5xl py-2'>Work from anywhere,</h2>
+        <h2 className='font-bold text-2xl lg:text-5xl pb-4'>stay in sync</h2>
+        <div  ref={ref}  style={{perspective:1000}} className='container overflow-hidden mt-4 border max-h-lvh rounded-3xl'>
         <motion.img
         src={featureimg}
         alt="work feature image"
@@ -64,11 +64,11 @@ const Scrollerbar = () => {
         </motion.img>
         </div>
 
-        <div className='bg-white/30 backdrop-blur absolute left-1/3 xl:left-1/2 -translate-x-1/3 xl:-translate-x-1/2 bottom-10 rounded-full grid grid-cols-2 gap-4 p-2'>
+        <div className='bg-white/30 backdrop-blur absolute left-1/2 xl:left-1/2 -translate-x-1/2 xl:-translate-x-1/2 bottom-10 rounded-full grid grid-cols-2 gap-4 p-2'>
         <motion.button
                         initial="rest"
                         whileHover="hover"
-                        className='bg-black text-white px-6 py-4 rounded-full font-bold'
+                        className='bg-black text-white px-6 py-4 rounded-full font-semibold'
                         >
                           <div className='relative overflow-hidden leading-none'>
                             <motion.span 
@@ -86,7 +86,7 @@ const Scrollerbar = () => {
                         <motion.button
                                         initial="rest"
                                         whileHover="hover"
-                                        className='bg-white/40 text-white px-6 py-4 rounded-full font-bold'
+                                        className='bg-white/40 text-white px-6 py-4 rounded-full font-semibold'
                                         >
                                           <div className='relative overflow-hidden leading-none'>
                                             <motion.span 

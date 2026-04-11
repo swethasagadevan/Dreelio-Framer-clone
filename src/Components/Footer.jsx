@@ -1,6 +1,8 @@
 import React from "react";
 import { FaXTwitter,FaLinkedin,FaLeaf } from "react-icons/fa6";
 import { motion } from "framer-motion";
+import cloudRightImg from '../assets/clouds_right.avif'
+import cloudLeftImg from '../assets/clouds_left.avif'
 
 const Footer = () => {
   const footer_pages_link = [
@@ -17,14 +19,14 @@ const Footer = () => {
   ];
   return (
     
-    <div className="pb-10 text-md">
+    <div className="pb-10 text-md relative overflow-hidden">
      <motion.div 
      initial={{opacity:0,y:80}}
       whileInView={{opacity:1,y:0}}
       transition={{ease:[0.25, 0.1, 0.25, 1],duration:1}}
       viewport={{once:true}}
-     className='text-center mt-32'>
-        <h2 className="text-5xl text-center font-semibold px-[10%] my-5">Ready to get started</h2>
+     className='text-center my-20 container p-4'>
+        <h2 className="text-5xl text-center font-semibold my-5">Ready to get started</h2>
         <h5 className="text-lg text-gray-500 mb-5">Download Dreelio for free. No credit card required.</h5>
         
         <motion.button
@@ -83,6 +85,25 @@ const Footer = () => {
         <p className="text-gray-600">Built in <strong>Framer</strong></p>
       </div>
     </div>
+
+    <motion.img
+              initial={{opacity:0,x:100}}
+              whileInView={{opacity:1,x:0}}
+              viewport={{once:true}}
+              transition={{duration:1.5,ease:[0.25, 0.1, 0.25, 1]}}
+              src={cloudRightImg}
+              className="absolute top-[20%] left-[85%] max-w-lg"
+              >
+              </motion.img>
+              <motion.img
+              initial={{opacity:0,x:-100}}
+              whileInView={{opacity:1,x:0}}
+              viewport={{once:true}}
+              transition={{duration:1.5,ease:[0.25, 0.1, 0.25, 1]}}
+              src={cloudLeftImg}
+              className="absolute top-[20%] right-[85%] max-w-lg"
+              >
+              </motion.img>
     </div>
   );
 };

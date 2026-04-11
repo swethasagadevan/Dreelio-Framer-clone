@@ -39,7 +39,7 @@ const itemVariants = {
   },
 };
   return (
-      <div className='mx-[5%] xl:mx-[15%] mt-[10%]'>
+      <div className='mt-16 container p-4 max-w-6xl mx-auto'>
     <motion.div 
     initial={{opacity:0,y:80}}
       whileInView={{opacity:1,y:0}}
@@ -47,7 +47,7 @@ const itemVariants = {
       viewport={{once:true}}
     className='text-center'>
         <h5 className="text-md text-gray-500 font-bold">COMMUNITY</h5>
-        <h2 className="text-3xl xl:text-6xl text-center font-semibold px-[10%] mt-5">Stay in the loop</h2>
+        <h2 className="text-3xl xl:text-6xl text-center font-semibold mt-5">Stay in the loop</h2>
     </motion.div>
     <motion.div
     variants={containerVariants}
