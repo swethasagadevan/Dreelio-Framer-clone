@@ -84,7 +84,7 @@ const itemVariants = {
       <motion.div 
     initial={{opacity:0,y:80}}
     whileInView={{opacity:1,y:0}}
-    viewport={{once:"true"}}
+    viewport={{once:true}}
     transition={{duration:1,ease:[0.25, 0.1, 0.25, 1]}}
      className="text-center">
         <h5 className="text-md xl:text-lg text-gray-500 font-bold">FEATURES</h5>
@@ -99,10 +99,12 @@ const itemVariants = {
       variants={containerVariants}
   initial="hidden"
   whileInView="show"
+  viewport={{once:true}}
       className="grid xl:grid-cols-2 gap-5 mt-5">
         {BenefitsList1.map((data, index) => (
           <motion.div ref={ref}
             variants={itemVariants}
+            viewport={{once:true}}
             key={index}
             className="bg-[#F0EAE5] p-6 rounded-2xl flex gap-5 flex-wrap flex-grow max-w-fit"
           >
@@ -141,10 +143,12 @@ const itemVariants = {
       variants={containerVariants}
   initial="hidden"
   whileInView="show"
+  viewport={{once:true}}
       className="grid xl:grid-cols-3 mt-5 gap-5">
         {benefitsList2.map((data, index) => (
           <motion.div
           variants={itemVariants}
+          viewport={{once:true}}
           key={index} className="bg-[#F0EAE5] flex flex-col rounded-2xl p-10 flex-grow">
             <div className="bg-white rounded-full w-fit p-2">
               <p className="text-3xl">{data.icon}</p>

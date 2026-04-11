@@ -31,7 +31,7 @@ const Hero = () => {
         animate="visible"
         viewport={{ once: "true" }}
         transition={{ staggerChildren: 0.03, delayChildren: 0.1 }}
-        className="container p-4 pt-36 text-center mx-auto max-w-3xl overflow-hidden"
+        className="container p-4 pt-16 lg:pt-36 text-center mx-auto max-w-3xl overflow-hidden"
         // className="pt-[20%] lg:pt-[15%] xl:pt-[10%] text-center"
       >
         {textArray.map((line, i) => (

@@ -25,9 +25,9 @@ const Footer = () => {
       whileInView={{opacity:1,y:0}}
       transition={{ease:[0.25, 0.1, 0.25, 1],duration:1}}
       viewport={{once:true}}
-     className='text-center my-20 container p-4'>
-        <h2 className="text-5xl text-center font-semibold my-5">Ready to get started</h2>
-        <h5 className="text-lg text-gray-500 mb-5">Download Dreelio for free. No credit card required.</h5>
+     className='text-center my-16 container p-4'>
+        <h2 className="text-2xl xl:text-5xl text-center font-semibold my-3">Ready to get started</h2>
+        <h5 className="text-base text-gray-500 mb-5">Download Dreelio for free. No credit card required.</h5>
         
         <motion.button
                             initial="rest"
