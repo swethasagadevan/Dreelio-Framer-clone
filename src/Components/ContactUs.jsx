@@ -13,19 +13,19 @@ const ContactUs = () => {
 
         <form action="" className=' bg-[#ECF0F5] p-6 rounded-3xl container w-fit mx-auto'>
             <div className='md:grid md:grid-cols-2 gap-5'>
-                <div>
+                <div className='mb-2'>
                     <label htmlFor="name">Name</label>
-                    <input type="text" placeholder='Eg. Jane Smith' className='w-full rounded-xl p-3 mb-5'/>
+                    <input type="text" placeholder='Eg. Jane Smith' className='w-full rounded-xl p-2'/>
                 </div>
-                <div>
+                <div className='mb-2'>
                     <label htmlFor="email">Email</label>
-                    <input type="text" placeholder='jane@framer.com'className='w-full rounded-xl p-3'/>
+                    <input type="text" placeholder='jane@framer.com'className='w-full rounded-xl p-2'/>
                 </div>
             </div>
             <label htmlFor="message">Message</label>
-            <textarea name="mesg" id="msg" className='w-full h-24 rounded-xl p-3 mb-5' placeholder='Enter your message...'></textarea>
+            <textarea name="mesg" id="msg" className='w-full h-24 rounded-xl p-2 mb-2' placeholder='Enter your message...'></textarea>
             <label htmlFor="customer">Are you an existing customer?</label>
-            <select name="custopt" id="custopt" defaultValue="" className='text-gray-600 w-full rounded-xl p-3 mb-5'>
+            <select name="custopt" id="custopt" defaultValue="" className='text-gray-600 w-full rounded-xl p-2 mb-5'>
                 <option disabled value="">Select...</option>
                 <option value="Yes">Yes</option>
                 <option value="No">No</option>
