@@ -64,13 +64,13 @@ const Scrollerbar = () => {
         </motion.img>
         </div>
 
-        <div className='bg-white/30 backdrop-blur absolute left-1/2 xl:left-1/2 -translate-x-1/2 xl:-translate-x-1/2 bottom-10 rounded-full grid grid-cols-2 gap-4 p-2'>
+        <div className='bg-white/30 backdrop-blur absolute left-1/2 -translate-x-1/2 bottom-10 rounded-full flex gap-2 p-2'>
         <motion.button
                         initial="rest"
                         whileHover="hover"
-                        className='bg-black text-white px-6 py-4 rounded-full font-semibold'
+                        className='bg-black text-white px-6 py-3 rounded-full font-semibold'
                         >
-                          <div className='relative overflow-hidden leading-none'>
+                          <div className='relative overflow-hidden leading-none text-nowrap'>
                             <motion.span 
                             variants={{rest:{y:0},hover:{y:"-100%"}}}
                             transition={{duration:0.1,ease:"easeOut"}}
@@ -86,9 +86,9 @@ const Scrollerbar = () => {
                         <motion.button
                                         initial="rest"
                                         whileHover="hover"
-                                        className='bg-white/40 text-white px-6 py-4 rounded-full font-semibold'
+                                        className='bg-white/40 text-white px-6 py-3 rounded-full font-semibold'
                                         >
-                                          <div className='relative overflow-hidden leading-none'>
+                                          <div className='relative overflow-hidden leading-none text-nowrap'>
                                             <motion.span 
                                             variants={{rest:{y:0},hover:{y:"-100%"}}}
                                             transition={{duration:0.1,ease:"easeOut"}}
