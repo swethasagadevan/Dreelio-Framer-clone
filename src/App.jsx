@@ -1,7 +1,5 @@
 import './App.css'
-
-import {BrowserRouter,Router,Route, Routes} from 'react-router-dom'
-
+import {BrowserRouter,Route, Routes} from 'react-router-dom'
 import Home from './Routes/Home'
 import RouteBlog from './Routes/RouteBlog'
 import RouteContactUs from './Routes/RouteContactUs'
@@ -16,8 +14,6 @@ function App() {
         <Route path="/contactus" element={<RouteContactUs/>} />
       </Routes>
       </BrowserRouter>
-      
-      
     </>
   )
 }
