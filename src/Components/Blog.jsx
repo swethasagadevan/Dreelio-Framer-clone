@@ -122,7 +122,7 @@ const itemVariants = {
             key={i}
             className=" container"
             >
-              <div className="rounded-3xl overflow-hidden h-[300px] ">
+              <div className="rounded-3xl overflow-hidden h-[300px] mx-auto ">
                 <motion.img
                   src={data.image}
                   variants={{
