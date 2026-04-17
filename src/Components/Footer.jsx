@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import cloudRightImg from '../assets/clouds_right.avif'
 import cloudLeftImg from '../assets/clouds_left.avif'
 import { HashLink } from "react-router-hash-link";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   const footer_pages_link = [
@@ -42,12 +43,12 @@ const Footer = () => {
                                 className='block'
                                 ><HashLink smooth to='/contactus'
                                             >Try Dreelio free</HashLink></motion.span>
-                                <motion.a
+                                <motion.span
                                 variants={{rest:{y:"100%"},hover:{y:0}}}
                                 transition={{duration:0.1,ease:"easeOut"}}
                                 className='absolute inset-0 block'
                                 ><HashLink smooth to='/contactus'
-                                            >Try Dreelio free</HashLink></motion.a>
+                                            >Try Dreelio free</HashLink></motion.span>
                               </div>
                             </motion.button>
     </motion.div> 
@@ -77,7 +78,7 @@ const Footer = () => {
           <div className="flex flex-col gap-5">
             <h4 className="font-bold">INFORMATION</h4>
           {footer_information_link.map((data,index) => (
-            <a href={data.link} key={index} className="text-gray-600">{data.tag}</a>
+            <Link to={data.link} key={index} className="text-gray-600">{data.tag}</Link>
           ))}
           </div>
         </div>
