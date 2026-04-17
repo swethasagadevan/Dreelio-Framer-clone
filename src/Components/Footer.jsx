@@ -3,6 +3,7 @@ import { FaXTwitter,FaLinkedin,FaLeaf } from "react-icons/fa6";
 import { motion } from "framer-motion";
 import cloudRightImg from '../assets/clouds_right.avif'
 import cloudLeftImg from '../assets/clouds_left.avif'
+import { HashLink } from "react-router-hash-link";
 
 const Footer = () => {
   const footer_pages_link = [
@@ -12,7 +13,7 @@ const Footer = () => {
     { tag: "Blog", link: "/#blog" },
   ];
   const footer_information_link = [
-    { tag: "Contact", link: "#" },
+    { tag: "Contact", link: "/contactus" },
     { tag: "Privacy", link: "#" },
     { tag: "Terms of use", link: "#" },
     { tag: "404", link: "#" },
@@ -35,18 +36,18 @@ const Footer = () => {
                             className='bg-black text-white px-6 py-4 rounded-full font-semibold w-full md:w-fit'
                             >
                               <div className='relative overflow-hidden leading-none'>
-                                <motion.a 
+                                <motion.span 
                                 variants={{rest:{y:0},hover:{y:"-100%"}}}
                                 transition={{duration:0.1,ease:"easeOut"}}
                                 className='block'
-                                href='/contactus'
-                                >Try Dreelio free</motion.a>
+                                ><HashLink smooth to='/contactus'
+                                            >Try Dreelio free</HashLink></motion.span>
                                 <motion.a
                                 variants={{rest:{y:"100%"},hover:{y:0}}}
                                 transition={{duration:0.1,ease:"easeOut"}}
                                 className='absolute inset-0 block'
-                                href='/contactus'
-                                >Try Dreelio free</motion.a>
+                                ><HashLink smooth to='/contactus'
+                                            >Try Dreelio free</HashLink></motion.a>
                               </div>
                             </motion.button>
     </motion.div> 

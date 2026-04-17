@@ -1,13 +1,14 @@
-import React, { useRef } from 'react'
+import React from 'react'
 import featuresimgone from '../assets/Freatures_img_one.avif'
 import featuresimgtwo from '../assets/Freatures_img_two.avif'
-import {motion, useScroll, useTransform} from 'framer-motion'
+import {motion} from 'framer-motion'
 import {FaChartLine, FaDollarSign, FaFileInvoice, FaList, FaRegClock,FaShapes,FaTasks } from 'react-icons/fa'
 import { FaRegFilePdf } from 'react-icons/fa6'
+import { HashLink } from 'react-router-hash-link'
 
 const Features = () => {
 
-    const featureList = [{
+    const featureList = [{  
         image:featuresimgone,
         title:"PROJECT MANAGEMENT",
         heading:"Keep every project moving forward",
@@ -68,18 +69,18 @@ const Features = () => {
                             className='bg-black text-white px-6 py-4 rounded-full font-bold mb-4'
                             >
                               <div className='relative overflow-hidden leading-none'>
-                                <motion.a 
+                                <motion.span
                                 variants={{rest:{y:0},hover:{y:"-100%"}}}
                                 transition={{duration:0.1,ease:"easeOut"}}
                                 className='block'
-                                href='/contactus'
-                                >Try Dreelio free</motion.a>
-                                <motion.a
+                                ><HashLink smooth to='/contactus'
+                                            >Try Dreelio free</HashLink></motion.span>
+                                <motion.span
                                 variants={{rest:{y:"100%"},hover:{y:0}}}
                                 transition={{duration:0.1,ease:"easeOut"}}
                                 className='absolute inset-0 block'
-                                href='/contactus'
-                                >Try Dreelio free</motion.a>
+                                ><HashLink smooth to='/contactus'
+                                            >Try Dreelio free</HashLink></motion.span>
                               </div>
                             </motion.button>
 

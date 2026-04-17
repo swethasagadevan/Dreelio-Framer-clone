@@ -3,6 +3,7 @@ import profileimage from "../assets/Hero_img.avif";
 import { easeInOut, motion, useScroll, useTransform } from "framer-motion";
 import cloudRightImg from "../assets/clouds_right.avif";
 import cloudLeftImg from "../assets/clouds_left.avif";
+import { HashLink } from "react-router-hash-link";
 
 const Hero = () => {
   //for text typing effect
@@ -69,22 +70,22 @@ const Hero = () => {
             className="bg-black text-white border px-6 py-4 rounded-full font-bold"
           >
             <div className="relative overflow-hidden leading-none">
-              <motion.a
+              <motion.span
                 variants={{ rest: { y: 0 }, hover: { y: "-100%" } }}
                 transition={{ duration: 0.1, ease: "easeOut" }}
                 className="block"
-                href="/contactus"
               >
-                Try Dreelio free
-              </motion.a>
-              <motion.a
+              <HashLink smooth to='/contactus'
+                          >Try Dreelio free</HashLink>
+              </motion.span>
+              <motion.span
                 variants={{ rest: { y: "100%" }, hover: { y: 0 } }}
                 transition={{ duration: 0.1, ease: "easeOut" }}
                 className="absolute inset-0 block"
-                href="/contactus"
               >
-                Try Dreelio free
-              </motion.a>
+              <HashLink smooth to='/contactus'
+                          >Try Dreelio free</HashLink>
+              </motion.span>
             </div>
           </motion.button>
 
@@ -94,22 +95,22 @@ const Hero = () => {
             className="bg-white/20 border-sky-50 px-6 py-4 rounded-full font-bold"
           >
             <div className="relative overflow-hidden leading-none">
-              <motion.a
+              <motion.span
                 variants={{ rest: { y: 0 }, hover: { y: "-100%" } }}
                 transition={{ duration: 0.1, ease: "easeOut" }}
                 className="block"
-                href='/#features'
               >
-                See features
-              </motion.a>
-              <motion.a
+              <HashLink smooth to='/#features'
+                          >See features</HashLink>
+              </motion.span>
+              <motion.span
                 variants={{ rest: { y: "100%" }, hover: { y: 0 } }}
                 transition={{ duration: 0.1, ease: "easeOut" }}
                 className="absolute inset-0 block"
-                href='/#features'
               >
-                See features
-              </motion.a>
+              <HashLink smooth to='/#features'
+                          >See features</HashLink>
+              </motion.span>
             </div>
           </motion.button>
         </div>

@@ -3,11 +3,8 @@ import { motion} from 'framer-motion'
 import { FaBars,FaLeaf } from 'react-icons/fa'
 import {FaX } from 'react-icons/fa6'
 import { HashLink } from 'react-router-hash-link'
-import { Link } from 'react-router-dom'
 
 const Navbar = () => {
-
-  const MotionLink=motion(Link)
     
     const navLinks =[{name:'Features',link:"/#features"},
     {name:'Benefits',link:"/#benefits"},
