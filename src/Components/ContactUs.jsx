@@ -3,10 +3,10 @@ import { motion } from 'framer-motion'
 
 const ContactUs = () => {
   return (
-    <div className='bg-gradient-to-b from-blue-200 via-blue-100 to-orange-100 p-4 pt-[5%]'>
-    <div className='text-center p-4'>
+    <div className='bg-gradient-to-b from-blue-200 via-blue-100 to-orange-100 pt-16 lg:pt-36 p-4'>
+    <div className='container mx-auto text-center max-w-6xl pb-4'>
         <span className="text-xs text-gray-500 font-bold bg-white rounded-full p-2">CONTACT US</span>
-        <h2 className="text-3xl lg:text-7xl text-center font-semibold px-[10%] my-5">Let's connect</h2>
+        <h2 className="text-3xl lg:text-7xl text-center font-semibold my-5">Let's Connect</h2>
         <p className='text-gray-500 text-base lg:text-lg'>Have questions about Dreelio? Contact us </p>
         <p className='text-gray-500 text-base lg:text-lg'>and we’ll be happy to help.</p>
     </div>
