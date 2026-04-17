@@ -68,23 +68,25 @@ const Features = () => {
                             className='bg-black text-white px-6 py-4 rounded-full font-bold mb-4'
                             >
                               <div className='relative overflow-hidden leading-none'>
-                                <motion.span 
+                                <motion.a 
                                 variants={{rest:{y:0},hover:{y:"-100%"}}}
                                 transition={{duration:0.1,ease:"easeOut"}}
                                 className='block'
-                                >Try Dreelio free</motion.span>
-                                <motion.span
+                                href='/contactus'
+                                >Try Dreelio free</motion.a>
+                                <motion.a
                                 variants={{rest:{y:"100%"},hover:{y:0}}}
                                 transition={{duration:0.1,ease:"easeOut"}}
                                 className='absolute inset-0 block'
-                                >Try Dreelio free</motion.span>
+                                href='/contactus'
+                                >Try Dreelio free</motion.a>
                               </div>
                             </motion.button>
 
             <div className='mt-4 xl:absolute bottom-0 left-0 right-0'>
-                <div className='grid grid-cols-2 p-2'>
+                <div className='grid grid-cols-2'>
                     {data.buttons.map((data,index)=>(
-                        <div key={index} className='border border-gray-300 rounded-full px-4 py-2 m-1 flex items-center gap-2'>
+                        <div key={index} className='border border-gray-300 text-nowrap rounded-full px-4 py-2 m-1 flex items-center gap-2'>
                             {data.icon}{data.title}
                         </div>
                     ))}

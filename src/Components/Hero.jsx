@@ -1,8 +1,8 @@
 import React, { useRef } from "react";
 import profileimage from "../assets/Hero_img.avif";
 import { easeInOut, motion, useScroll, useTransform } from "framer-motion";
-import cloudRightImg from '../assets/clouds_right.avif'
-import cloudLeftImg from '../assets/clouds_left.avif'
+import cloudRightImg from "../assets/clouds_right.avif";
+import cloudLeftImg from "../assets/clouds_left.avif";
 
 const Hero = () => {
   //for text typing effect
@@ -69,20 +69,22 @@ const Hero = () => {
             className="bg-black text-white border px-6 py-4 rounded-full font-bold"
           >
             <div className="relative overflow-hidden leading-none">
-              <motion.span
+              <motion.a
                 variants={{ rest: { y: 0 }, hover: { y: "-100%" } }}
                 transition={{ duration: 0.1, ease: "easeOut" }}
                 className="block"
+                href="/contactus"
               >
                 Try Dreelio free
-              </motion.span>
-              <motion.span
+              </motion.a>
+              <motion.a
                 variants={{ rest: { y: "100%" }, hover: { y: 0 } }}
                 transition={{ duration: 0.1, ease: "easeOut" }}
                 className="absolute inset-0 block"
+                href="/contactus"
               >
                 Try Dreelio free
-              </motion.span>
+              </motion.a>
             </div>
           </motion.button>
 
@@ -92,42 +94,42 @@ const Hero = () => {
             className="bg-white/20 border-sky-50 px-6 py-4 rounded-full font-bold"
           >
             <div className="relative overflow-hidden leading-none">
-              <motion.span
+              <motion.a
                 variants={{ rest: { y: 0 }, hover: { y: "-100%" } }}
                 transition={{ duration: 0.1, ease: "easeOut" }}
                 className="block"
+                href='/#features'
               >
                 See features
-              </motion.span>
-              <motion.span
+              </motion.a>
+              <motion.a
                 variants={{ rest: { y: "100%" }, hover: { y: 0 } }}
                 transition={{ duration: 0.1, ease: "easeOut" }}
                 className="absolute inset-0 block"
+                href='/#features'
               >
                 See features
-              </motion.span>
+              </motion.a>
             </div>
           </motion.button>
-        </div>     
+        </div>
       </motion.div>
       <motion.img
-          initial={{opacity:0,x:100}}
-          whileInView={{opacity:1,x:0}}
-          viewport={{once:true}}
-          transition={{duration:1.5,ease:[0.25, 0.1, 0.25, 1]}}
-          src={cloudRightImg}
-          className="absolute top-[20%] left-[85%] max-w-lg"
-          >
-          </motion.img>
-          <motion.img
-          initial={{opacity:0,x:-100}}
-          whileInView={{opacity:1,x:0}}
-          viewport={{once:true}}
-          transition={{duration:1.5,ease:[0.25, 0.1, 0.25, 1]}}
-          src={cloudLeftImg}
-          className="absolute top-[20%] right-[85%] max-w-lg"
-          >
-          </motion.img>
+        initial={{ opacity: 0, x: 100 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 1.5, ease: [0.25, 0.1, 0.25, 1] }}
+        src={cloudRightImg}
+        className="absolute top-[20%] left-[85%] max-w-lg"
+      ></motion.img>
+      <motion.img
+        initial={{ opacity: 0, x: -100 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 1.5, ease: [0.25, 0.1, 0.25, 1] }}
+        src={cloudLeftImg}
+        className="absolute top-[20%] right-[85%] max-w-lg"
+      ></motion.img>
       <div
         ref={ref}
         className="container p-4 max-w-5xl h-[150px] sm:h-[200px] md:h-[300px] lg:h-[400px] mx-auto overflow-hidden "

@@ -6,10 +6,10 @@ import cloudLeftImg from '../assets/clouds_left.avif'
 
 const Footer = () => {
   const footer_pages_link = [
-    { tag: "Home", link: "#" },
-    { tag: "Features", link: "#" },
-    { tag: "Pricing", link: "#" },
-    { tag: "Blog", link: "#" },
+    { tag: "Home", link: "/" },
+    { tag: "Features", link: "/#features" },
+    { tag: "Pricing", link: "/#pricing" },
+    { tag: "Blog", link: "/#blog" },
   ];
   const footer_information_link = [
     { tag: "Contact", link: "#" },
@@ -25,7 +25,7 @@ const Footer = () => {
       whileInView={{opacity:1,y:0}}
       transition={{ease:[0.25, 0.1, 0.25, 1],duration:1}}
       viewport={{once:true}}
-     className='text-center my-16 container p-4'>
+     className='text-center my-16 p-4'>
         <h2 className="text-2xl xl:text-5xl text-center font-semibold my-3">Ready to get started</h2>
         <h5 className="text-base text-gray-500 mb-5">Download Dreelio for free. No credit card required.</h5>
         
@@ -35,16 +35,18 @@ const Footer = () => {
                             className='bg-black text-white px-6 py-4 rounded-full font-semibold w-full md:w-fit'
                             >
                               <div className='relative overflow-hidden leading-none'>
-                                <motion.span 
+                                <motion.a 
                                 variants={{rest:{y:0},hover:{y:"-100%"}}}
                                 transition={{duration:0.1,ease:"easeOut"}}
                                 className='block'
-                                >Try Dreelio free</motion.span>
-                                <motion.span
+                                href='/contactus'
+                                >Try Dreelio free</motion.a>
+                                <motion.a
                                 variants={{rest:{y:"100%"},hover:{y:0}}}
                                 transition={{duration:0.1,ease:"easeOut"}}
                                 className='absolute inset-0 block'
-                                >Try Dreelio free</motion.span>
+                                href='/contactus'
+                                >Try Dreelio free</motion.a>
                               </div>
                             </motion.button>
     </motion.div> 

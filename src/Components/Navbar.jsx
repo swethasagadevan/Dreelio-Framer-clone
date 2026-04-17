@@ -65,7 +65,7 @@ useEffect(() => {
     >
 
     <div 
-    className={`flex justify-between items-center px-5 py-3 rounded-full
+    className={`flex justify-between items-center px-4 py-3 rounded-full
       ${isscrolled ? " shadow-lg backdrop-blur bg-white/20" : "bg-transparent"}`}>
       <h1 
       className="sm:text-lg lg:text-xl font-semibold flex gap-2 items-center"
@@ -82,17 +82,20 @@ useEffect(() => {
         whileHover="hover"
         className='bg-black text-white px-6 py-4 rounded-full font-semibold hidden xl:inline-block sm:text-sm lg:text-base'
         >
+          
           <div className='relative overflow-hidden leading-none'>
-            <motion.span 
+            <motion.a 
             variants={{rest:{y:0},hover:{y:"-100%"}}}
             transition={{duration:0.1,ease:"easeOut"}}
             className='block'
-            >Try Dreelio free</motion.span>
-            <motion.span
+            href='/contactus'
+            >Try Dreelio free</motion.a>
+            <motion.a
             variants={{rest:{y:"100%"},hover:{y:0}}}
             transition={{duration:0.1,ease:"easeOut"}}
             className='absolute inset-0 block'
-            >Try Dreelio free</motion.span>
+            href='/contactus'
+            >Try Dreelio free</motion.a>
           </div>
         </motion.button>
 

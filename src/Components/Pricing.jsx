@@ -105,16 +105,18 @@ const itemVariants = {
                 className={`w-full ${index==1?'bg-black text-white':'bg-[#F4F1EE]'} font-semibold text-base rounded-full mt-5 px-14 py-3`}
                 >
                   <div className='relative overflow-hidden leading-none'>
-                    <motion.span 
+                    <motion.a 
                     variants={{rest:{y:0},hover:{y:"-100%"}}}
                     transition={{duration:0.1,ease:"easeOut"}}
                     className='block'
-                    >{data.buttonName}</motion.span>
-                    <motion.span
+                    href='/contactus'
+                    >{data.buttonName}</motion.a>
+                    <motion.a
                     variants={{rest:{y:"100%"},hover:{y:0}}}
                     transition={{duration:0.1,ease:"easeOut"}}
                     className='absolute inset-0 block'
-                    >{data.buttonName}</motion.span>
+                    href='/contactus'
+                    >{data.buttonName}</motion.a>
                   </div>
                 </motion.button>
         </div>

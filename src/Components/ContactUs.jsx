@@ -13,24 +13,24 @@ const ContactUs = () => {
 
         <form action="" className=' bg-[#ECF0F5] p-6 rounded-3xl container w-fit mx-auto'>
             <div className='md:grid md:grid-cols-2 gap-5'>
-                <div className='mb-2'>
-                    <label htmlFor="name">Name</label>
-                    <input type="text" placeholder='Eg. Jane Smith' className='w-full rounded-xl p-2'/>
+                <div className='mb-4'>
+                    <label htmlFor="name" className='my-2'>Name</label>
+                    <input type="text" placeholder='Eg. Jane Smith' className='w-full rounded-xl p-2 my-2'/>
                 </div>
-                <div className='mb-2'>
-                    <label htmlFor="email">Email</label>
-                    <input type="text" placeholder='jane@framer.com'className='w-full rounded-xl p-2'/>
+                <div className='mb-4'>
+                    <label htmlFor="email" className='my-2'>Email</label>
+                    <input type="text" placeholder='jane@framer.com' className='w-full rounded-xl p-2 my-2'/>
                 </div>
             </div>
-            <label htmlFor="message">Message</label>
-            <textarea name="mesg" id="msg" className='w-full h-24 rounded-xl p-2 mb-2' placeholder='Enter your message...'></textarea>
-            <label htmlFor="customer">Are you an existing customer?</label>
-            <select name="custopt" id="custopt" defaultValue="" className='text-gray-600 w-full rounded-xl p-2 mb-5'>
+            <label htmlFor="message" className='my-2'>Message</label>
+            <textarea name="mesg" id="msg" className='w-full h-24 rounded-xl p-2 mb-4 my-2' placeholder='Enter your message...'></textarea>
+            <label htmlFor="customer" className='my-2'>Are you an existing customer?</label>
+            <select name="custopt" id="custopt" defaultValue="" className='text-gray-600 w-full rounded-xl p-2 mb-5 my-2'>
                 <option disabled value="">Select...</option>
                 <option value="Yes">Yes</option>
                 <option value="No">No</option>
             </select>
-            <div className='mb-5'>
+            <div className='mb-5 mt-4'>
                 <motion.button
                 initial="rest"
                 whileHover="hover"
@@ -41,12 +41,12 @@ const ContactUs = () => {
                     variants={{rest:{y:0},hover:{y:"-100%"}}}
                     transition={{duration:0.1,ease:"easeOut"}}
                     className='block'
-                    >Try Dreelio free</motion.span>
+                    >Send a message</motion.span>
                     <motion.span
                     variants={{rest:{y:"100%"},hover:{y:0}}}
                     transition={{duration:0.1,ease:"easeOut"}}
                     className='absolute inset-0 block'
-                    >Try Dreelio free</motion.span>
+                    >Send a message</motion.span>
                   </div>
                 </motion.button>
             </div>

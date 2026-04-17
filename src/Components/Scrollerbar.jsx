@@ -1,8 +1,17 @@
-import React, { useRef } from 'react'
-import {motion, useScroll, useTransform} from 'framer-motion'
+import React, { useRef, useState } from 'react'
+import {AnimatePresence, motion, useScroll, useTransform } from 'framer-motion'
 import featureimg from '../assets/feature.avif'
+import featureimg_2 from '../assets/feature2.avif'
 
 const Scrollerbar = () => {
+    const [selected,setSelected] =useState("mobile")
+
+    const handleMobileImageChange = (e)=>{
+      setSelected("mobile")
+    }
+    const handleWebImageChange = (e)=>{
+      setSelected("web")
+    }
 
     const ref = useRef()
 
@@ -11,7 +20,8 @@ const Scrollerbar = () => {
       offset:["start 80%","center center"]
     })
 
-    const scale =useTransform(scrollYProgress,[0,0.7],[1.5,1])
+    const scale =useTransform(scrollYProgress,[0,1],[1.5,1])
+    const x = useTransform(scrollYProgress, [0, 0], [0, 0]);
 
     const startupList = ["Milano","luminous","Theo","Amsterdam","Savannah","Theo","Amsterdam","Savannah"]
   return (
@@ -53,22 +63,27 @@ const Scrollerbar = () => {
         <h2 className='font-bold text-2xl lg:text-5xl py-2'>Work from anywhere,</h2>
         <h2 className='font-bold text-2xl lg:text-5xl pb-4'>stay in sync</h2>
         <div  ref={ref}  style={{perspective:1000}} className='container overflow-hidden mt-4 border mx-auto max-h-lvh rounded-3xl'>
-        <motion.img
-        src={featureimg}
-        alt="work feature image"
-        className=''
-        style={{
-          scale
-        }}  
-        >
-        </motion.img>
+        
+       <motion.div
+       style={{scale}}
+       >
+        <motion.div
+       animate={{ x: selected === "web" ? "-100%" : "0%" }}
+       transition={{ duration: 1, ease: "easeInOut" }}
+       className='flex'
+       >
+         <img src={featureimg} alt="work feature image" />
+         <img src={featureimg_2} alt="work feature image"/>
+       </motion.div>
+       </motion.div>
+        
         </div>
 
         <div className='bg-white/30 backdrop-blur absolute left-1/2 -translate-x-1/2 bottom-10 rounded-full flex gap-2 p-2'>
-        <motion.button
+        <motion.button onClick={()=>handleMobileImageChange()}
                         initial="rest"
                         whileHover="hover"
-                        className='bg-black text-white px-6 py-3 rounded-full font-semibold'
+                        className={`${selected=="mobile"?'bg-black ':'bg-white/40 '}text-white px-6 py-3 rounded-full font-semibold`}
                         >
                           <div className='relative overflow-hidden leading-none text-nowrap'>
                             <motion.span 
@@ -83,10 +98,10 @@ const Scrollerbar = () => {
                             >Moblie App</motion.span>
                           </div>
                         </motion.button>
-                        <motion.button
+                        <motion.button onClick={()=>handleWebImageChange()}
                                         initial="rest"
                                         whileHover="hover"
-                                        className='bg-white/40 text-white px-6 py-3 rounded-full font-semibold'
+                                        className={`${selected=="web"?'bg-black ':'bg-white/40 '} text-white px-6 py-3 rounded-full font-semibold`}
                                         >
                                           <div className='relative overflow-hidden leading-none text-nowrap'>
                                             <motion.span 
