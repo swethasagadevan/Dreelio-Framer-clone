@@ -4,7 +4,7 @@ import { FaCheck } from 'react-icons/fa6'
 import { motion } from 'framer-motion'
 
 const Pricing = () => {
-  const [billing,setBilling]=useState("monthly")
+  const [billing,setBilling]=useState("annual")
 
   const plansList =[{
     type:"Dreelio Basic",
@@ -87,7 +87,10 @@ const itemVariants = {
             Monthly
             </button>
         </div>}
-        <h5 className='text-gray-500 font-medium py-2'>{data.type}</h5>
+        <div className='pb-2'>
+          <span className='text-gray-500 font-medium'>{data.type}</span>
+        {(index==1)&&(billing=="annual") &&<span className='bg-white border-2 border-green-600 text-green-600 rounded-full ml-1 text-sm py-1 px-2 font-medium'>Save 20%</span>}
+        </div>
         <h3 className='font-semibold text-2xl xl:text-4xl pb-2'>
           {index==1?data.amount[billing] || data.amount.monthly :data.amount.monthly}
           </h3>
