@@ -3,9 +3,11 @@ import { motion} from 'framer-motion'
 import { FaBars,FaLeaf } from 'react-icons/fa'
 import {FaX } from 'react-icons/fa6'
 import { HashLink } from 'react-router-hash-link'
+import { Link } from 'react-router-dom'
 
 const Navbar = () => {
 
+  const MotionLink=motion(Link)
     
     const navLinks =[{name:'Features',link:"/#features"},
     {name:'Benefits',link:"/#benefits"},
@@ -84,18 +86,18 @@ useEffect(() => {
         >
           
           <div className='relative overflow-hidden leading-none'>
-            <motion.HashLink 
+            <motion.span
             variants={{rest:{y:0},hover:{y:"-100%"}}}
             transition={{duration:0.1,ease:"easeOut"}}
-            className='block'
-            smooth to='/contactus'
-            >Try Dreelio free</motion.HashLink>
-            <motion.HashLink
+            className='block'>
+            <HashLink smooth to='/contactus'
+            >Try Dreelio free</HashLink> </motion.span>
+            <motion.span
             variants={{rest:{y:"100%"},hover:{y:0}}}
             transition={{duration:0.1,ease:"easeOut"}}
-            className='absolute inset-0 block'
-            smooth to='/contactus'
-            >Try Dreelio free</motion.HashLink>
+            className='absolute inset-0 block'>
+            <HashLink smooth to='/contactus'
+            >Try Dreelio free</HashLink></motion.span>
           </div>
         </motion.button>
 
