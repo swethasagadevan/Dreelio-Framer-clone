@@ -84,18 +84,18 @@ useEffect(() => {
         >
           
           <div className='relative overflow-hidden leading-none'>
-            <motion.a 
+            <motion.HashLink 
             variants={{rest:{y:0},hover:{y:"-100%"}}}
             transition={{duration:0.1,ease:"easeOut"}}
             className='block'
-            href='/contactus'
-            >Try Dreelio free</motion.a>
-            <motion.a
+            smooth to='/contactus'
+            >Try Dreelio free</motion.HashLink>
+            <motion.HashLink
             variants={{rest:{y:"100%"},hover:{y:0}}}
             transition={{duration:0.1,ease:"easeOut"}}
             className='absolute inset-0 block'
-            href='/contactus'
-            >Try Dreelio free</motion.a>
+            smooth to='/contactus'
+            >Try Dreelio free</motion.HashLink>
           </div>
         </motion.button>
 
