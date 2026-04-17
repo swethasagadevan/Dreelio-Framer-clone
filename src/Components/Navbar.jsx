@@ -121,12 +121,14 @@ useEffect(() => {
             variants={{rest:{y:0},hover:{y:"-100%"}}}
             transition={{duration:0.1,ease:"easeOut"}}
             className='block'
-            >Try Dreelio free</motion.span>
+            ><HashLink smooth to='/contactus'
+            >Try Dreelio free</HashLink></motion.span>
             <motion.span
             variants={{rest:{y:"100%"},hover:{y:0}}}
             transition={{duration:0.1,ease:"easeOut"}}
             className='absolute inset-0 block'
-            >Try Dreelio free</motion.span>
+            ><HashLink smooth to='/contactus'
+            >Try Dreelio free</HashLink></motion.span>
           </div>
         </motion.button>
       
