@@ -1,4 +1,4 @@
-import { AnimatePresence, motion } from "framer-motion";
+import { AnimatePresence, easeInOut, motion } from "framer-motion";
 import React, { useState } from "react";
 import {
   FaAngleLeft,
@@ -30,7 +30,7 @@ const ButtonScrollBar = (reviews) => {
           animate={{
             x: -active * (300 + 16),
           }}
-          transition={{ type: "spring", stiffness: 10 }}
+          transition={{ type: "spring", stiffness: 50,ease:easeInOut }}
           className="flex w-max"
         >
           {[...reviews.reviews, ...reviews.reviews].map((data, index) => (
